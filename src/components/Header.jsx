@@ -1,34 +1,84 @@
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import React from "react";
+import { Nav, NavItem } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faSearch,
+  faHome,
+  faUserCircle,
+  faEnvelope,
+  faExclamationCircle,
+  faBell,
+} from "@fortawesome/free-solid-svg-icons";
 
-function Header() {
+const tabs = [
+  {
+    route: "/home",
+    icon: faHome,
+  },
+  {
+    route: "/search",
+    icon: faExclamationCircle,
+  },
+
+  {
+    route: "/login",
+    icon: faEnvelope,
+  },
+  {
+    route: "/login",
+    icon: faUserCircle,
+  },
+];
+
+const Header = (props) => {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
-      <Container>
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
-            </NavDropdown>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+    <div className="pt-3">
+      <div className="d-flex justify-content-around">
+        <div
+          className="circle "
+          style={{ width: "50px", height: "50px" }}
+        ></div>
+        <div>
+          <h4 className='fw-bold'>HelpYours!</h4>
+        </div>
+        <div>
+          <FontAwesomeIcon
+            icon={faBell}
+            className="text-dark"
+            style={{ fontSize: "1.5rem" }}
+          />
+        </div>
+      </div>
+
+      <nav
+        className="navbar fixed-bottom navbar-light d-block d-lg-none bottom-tab-nav"
+        role="navigation"
+      >
+        <Nav className="w-100">
+          <div className=" d-flex flex-row justify-content-around w-100">
+            {tabs.map((tab, index) => (
+              <NavItem key={`tab-${index}`}>
+                <NavLink
+                  to={tab.route}
+                  className="nav-link bottom-nav-link"
+                  activeClassName="active"
+                >
+                  <div className="row d-flex flex-column justify-content-center align-items-center">
+                    <FontAwesomeIcon
+                      size="lg"
+                      icon={tab.icon}
+                      style={{ color: "black" }}
+                    />
+                  </div>
+                </NavLink>
+              </NavItem>
+            ))}
+          </div>
+        </Nav>
+      </nav>
+    </div>
   );
-}
+};
 
 export default Header;

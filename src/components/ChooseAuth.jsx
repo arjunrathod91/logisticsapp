@@ -5,7 +5,7 @@ import { faHandHoldingHeart } from '@fortawesome/free-solid-svg-icons';
 const ChooseAuth = () => {
   return (
     <>
-      <div className=" d-flex flex-column justify-content-center align-items-center mt-5">
+      <div className=" d-flex flex-column justify-content-center align-items-center pt-5 " >
         <div className="circle"></div>
         <div className="text-center">
           <h4 className="fw-bold">HelpYours!</h4>
