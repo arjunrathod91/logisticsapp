@@ -1,0 +1,23 @@
+.container{
+  height: 100vh;
+}
+.circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%; 
+  background-color:rgb(19, 83, 83);  
+  margin-bottom: 10px;
+}
+.herobtnparent{
+  margin-top: 140px;
+}
+.herobtn{
+  padding: 8px 50px;
+  font-weight: 500;
+  background-color: rgb(19, 83, 83); 
+  color: #fff;
+  border: 0;
+}
+.heroparagraph{
+  font-weight: 500;
+}
