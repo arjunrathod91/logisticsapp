@@ -1,15 +1,21 @@
 .container{
   height: 100vh;
+  background-color: cadetblue;
+
+  
 }
 .circle {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%; 
   background-color:rgb(19, 83, 83);  
   margin-bottom: 10px;
 }
 .herobtnparent{
   margin-top: 140px;
+}
+a{
+  text-decoration: none !important;
 }
 .herobtn{
   padding: 8px 50px;
@@ -21,3 +27,45 @@
 .heroparagraph{
   font-weight: 500;
 }
+
+.form-container {
+  width: 300px; 
+  padding: 20px;  
+  background-color: #fff;
+  border-radius: 10px;
+
+
+}
+
+.form-group {
+  margin-bottom: 15px; 
+}
+
+.form-control {
+  width: calc(100% - 16px);  padding: 8px; 
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="password"] {
+  width: calc(100% - 16px); /* Adjust width and consider padding/border */
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: grey;
+  color: #333;
+}
+.signupbtn{
+  padding: 8px 80px;
+  background-color:rgb(19, 61, 61); 
+  color: #fff; 
+  border: none;
+  cursor: pointer;
+  display: block; 
+  margin: 0 auto;
+  margin-top: 15px;
+ 
+}
+
