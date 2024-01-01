@@ -1,12 +1,10 @@
-.container{
+.App{
   height: 100vh;
-  background-color: cadetblue;
-
-  
+  background-color: aquamarine;  
 }
 .circle {
-  width: 80px;
-  height: 80px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%; 
   background-color:rgb(19, 83, 83);  
   margin-bottom: 10px;
@@ -30,11 +28,9 @@ a{
 
 .form-container {
   width: 300px; 
-  padding: 20px;  
   background-color: #fff;
   border-radius: 10px;
-
-
+  padding: 10px 20px;
 }
 
 .form-group {
@@ -45,12 +41,13 @@ a{
   width: calc(100% - 16px);  padding: 8px; 
   border: 1px solid #ccc; 
   border-radius: 4px; 
+  cursor: pointer;
 }
 
 .form-container input[type="text"],
 .form-container input[type="email"],
 .form-container input[type="password"] {
-  width: calc(100% - 16px); /* Adjust width and consider padding/border */
+  width: calc(100% - 16px); 
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -67,5 +64,29 @@ a{
   margin: 0 auto;
   margin-top: 15px;
  
+}
+
+.help {
+  width: 250px; 
+  height: 50px; 
+  background-color:rgb(19, 61, 61); 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: #fff;
+  font-weight: bold;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+}
+
+.help p {
+  text-align: center; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 

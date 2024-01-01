@@ -6,11 +6,10 @@ const Login = () => {
   
   return (
     <>
-      <div className="container d-flex flex-column justify-content-center align-items-center ">
+      <div className="container d-flex flex-column justify-content-center align-items-center pt-3">
         <div className="circle"></div>
         <div className="text-center">
-          <h4 className="fw-bold">HelpYours!</h4>
-          <p className="heroparagraph">Your help is our priority</p>
+          <h4 className="fw-bold mb-4">HelpYours!</h4>
         </div>
         <h4 className="text-center mt-2 fw-bold">Sign Up</h4>
 
