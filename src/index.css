@@ -1,4 +1,6 @@
 
+
+
 *{
   margin: 0;
   box-sizing: border-box;
@@ -38,6 +40,7 @@ a{
 .heroparagraph{
   font-weight: 500;
 }
+
 
 .form-container {
   width: 300px; 
@@ -238,4 +241,20 @@ line-height: normal;
     border-top: none;
     border-bottom:0.5px solid black;
   
+  }
+
+  .organization-form{
+    width: 400px;
+    height: 500px;
+
+  }
+  .organization-form form{
+  }
+  .organization-form input{
+    background-color:none;
+    background-color:#E5EEEC;
+    outline: none;
+  }
+  .border-b{
+    border-bottom: 1px solid black;
   }

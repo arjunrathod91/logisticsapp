@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Header from '../components/Header'
 
 const cardData = [
@@ -13,7 +14,7 @@ function NearbyHelpers() {
       <h4>Nearby Helpers</h4>
       <div className="row">
         {cardData.map((card) => (
-          <div key={card.id} className="col-lg-4 col-md-6 mb-4 ">
+          <Link to="/volunteerprofile"><div key={card.id} className="col-lg-4 col-md-6 mb-4 ">
             <div className="card custom-card">
               <div className="card-body bg-secondary" style={{backgroundColor:"#D9D9D9"}}>
                 <div className="circle custom-circle"></div>
@@ -22,7 +23,7 @@ function NearbyHelpers() {
                 <p className="card-text">Location:{card.Location}</p>
               </div>
             </div>
-          </div>
+          </div></Link>
         ))}
       </div>
     </div>

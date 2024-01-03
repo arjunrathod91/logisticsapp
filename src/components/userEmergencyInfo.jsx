@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Header from './Header'
 
 
@@ -52,7 +53,7 @@ const UserEmergencyInfo = () => {
           />
         </div>
           <p>use current location</p>
-        <button className='submitbtn'>Submit</button>
+        <Link to="/nearbyhelpers"><button className='submitbtn'>Submit</button></Link>
 
       </form>
         

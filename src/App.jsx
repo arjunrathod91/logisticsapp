@@ -10,11 +10,17 @@ import Responsemsg from './components/ResponseMsg';
 import NearbyHelpers from './components/NearbyHelpers';
 import VolunteerProfile from './components/VolunteerProfile';
 import Verify from './components/Verify';
-import VolRegister from './components/VolRegister';
+import VolRegister from './components/Volunteer/VolRegister';
+import Organization from './components/Volunteer/Organization';
+import ContactDetails from './components/Volunteer/ContactDetails';
+import MyContext from './Contexts/AllContext';
+import { useState } from 'react';
 
 function App() {
-
+  const [latitude,setLatitude] = useState(0)
+  const [longitude,setLongitude] = useState(0)
   return (
+    <MyContext.Provider value={{latitude,setLatitude,longitude,setLongitude}}>
     <div className=" App">
       <Routes>
        <Route exact path="/" element={<Hero />}/>
@@ -22,15 +28,18 @@ function App() {
        <Route  path="/signupasuser" element={<SignUp />}/>
        <Route  path="/login" element={<Login />}/>
        <Route  path="/header" element={<Header />}/>
-       <Route  path="/askforhelp" element={<AskForHelp />}/>
+       <Route  path="/userpage" element={<AskForHelp />}/>
        <Route  path="/useremergencyinfo" element={<UserEmergencyInfo />}/>
        <Route  path="/responsemsg" element={<Responsemsg />}/>
        <Route  path="/nearbyhelpers" element={<NearbyHelpers />}/>
        <Route  path="/volunteerprofile" element={<VolunteerProfile />}/>
        <Route  path="/verify" element={<Verify />}/>
        <Route  path="/volregister" element={<VolRegister />}/>
+       <Route  path="/volorganization" element={<Organization />}/>
+       <Route  path="/volcontact" element={<ContactDetails />}/>
       </Routes>
-      </div>  
+      </div> 
+      </MyContext.Provider> 
       )
 }
 

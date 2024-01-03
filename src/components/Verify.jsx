@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Verify = () => {
   return (
     <div className="container verify-parent">
@@ -18,7 +20,7 @@ const Verify = () => {
         />
       </div>
       <div>
-        <button className="verifybtn">Verify</button>
+        <Link to="/userpage"><button className="verifybtn">Verify</button></Link>
       </div>
     </div>
   );
