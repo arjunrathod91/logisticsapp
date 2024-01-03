@@ -1,16 +1,15 @@
 import { Link } from "react-router-dom";
 
-const Login = () => {
-  
-
+const VolRegister = () => {
   
   return (
     <>
-      <div  className="sign-up container d-flex flex-column justify-content-center align-items-center pt-3">
+      <div  className="vol-reg container d-flex flex-column justify-content-center align-items-center pt-3">
         <div className="circle"></div>
         <div className="text-center">
           <h4 className="fw-bold mb-4">HelpYours!</h4>
         </div>
+       
         <h4 className="text-center mt-2 fw-bold">Sign Up</h4>
 
         <form  className="form-container">
@@ -56,6 +55,16 @@ const Login = () => {
               required
             />
           </div>
+          <div>
+            <label htmlFor="image"> Profile Picture</label>
+            <input
+              type="file"
+              id="file"
+              name="file"
+              className="form-control"
+              required
+            />
+          </div>
 
        <Link to="/login"><button type="submit" className="signupbtn fw-bold" >Sign Up</button></Link>
        <p style={{color:"#48B09D",marginTop:"10px"}}>Already have an account ?<span className="fw-bold"><Link style={{color: "#40C6AE"}} to="/login">Log In</Link></span> </p>
@@ -66,4 +75,4 @@ const Login = () => {
 
 };
 
-export default Login;
+export default VolRegister;
