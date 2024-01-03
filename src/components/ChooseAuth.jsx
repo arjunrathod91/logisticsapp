@@ -12,17 +12,17 @@ const ChooseAuth = () => {
         </div>
         <div className="chooseauth d-flex flex-row gap-5 mt-5">
           <div className="chooseuser">
-          <Link to="/signupasuser" ><FontAwesomeIcon icon={faUser} size="4x" style={{ color: 'gray' }}/></Link>
+          <Link to="/login" ><FontAwesomeIcon icon={faUser} size="4x" style={{ color: 'gray' }}/></Link>
            <p className="fw-bold">user</p>
           </div>
           <div className="choosevolunteer">
-         <Link to='/signupasvolunteer'><FontAwesomeIcon icon={faHandHoldingHeart} size="4x" style={{ color: 'gray' }}/></Link>
+         <Link to='/volregister'><FontAwesomeIcon icon={faHandHoldingHeart} size="4x" style={{ color: 'gray' }}/></Link>
           <p className="fw-bold">volunteer</p>
           </div>
         </div>
         <div className="herobtnparent">
-          <Link to="/">
-            <button className="herobtn">Get Started</button>
+          <Link to="#">
+            <button className="herobtn ">Choose mode</button>
           </Link>
         </div>
       </div>

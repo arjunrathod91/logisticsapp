@@ -1,12 +1,24 @@
+
+*{
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+
+}
+
+
+
 .App{
   height: 100vh;
-  background-color: aquamarine;  
-}
+  background-color: #E5EEEC;; 
+  font-family: Inter;
+ 
+} 
 .circle {
-  width: 50px;
-  height: 50px;
+  width: 61px;
+  height: 61px;
   border-radius: 50%; 
-  background-color:rgb(19, 83, 83);  
+  background-color:#26ABB4; 
   margin-bottom: 10px;
 }
 .herobtnparent{
@@ -14,11 +26,12 @@
 }
 a{
   text-decoration: none !important;
+  color: #48B09D !important;
 }
 .herobtn{
   padding: 8px 50px;
   font-weight: 500;
-  background-color: rgb(19, 83, 83); 
+  background-color:#26ABB4;  
   color: #fff;
   border: 0;
 }
@@ -28,8 +41,7 @@ a{
 
 .form-container {
   width: 300px; 
-  background-color: #fff;
-  border-radius: 10px;
+  border-radius: 20px;
   padding: 10px 20px;
 }
 
@@ -44,19 +56,21 @@ a{
   cursor: pointer;
 }
 
-.form-container input[type="text"],
-.form-container input[type="email"],
-.form-container input[type="password"] {
-  width: calc(100% - 16px); 
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color: grey;
-  color: #333;
+
+.sign-up{
+  color: #000;
+font-family: Inter;
+font-size: 16px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+
 }
+
+
 .signupbtn{
   padding: 8px 80px;
-  background-color:rgb(19, 61, 61); 
+  background-color:#26ABB4;  
   color: #fff; 
   border: none;
   cursor: pointer;
@@ -67,9 +81,9 @@ a{
 }
 
 .help {
-  width: 250px; 
+  width: 209px; 
   height: 50px; 
-  background-color:rgb(19, 61, 61); 
+  background-color:#26ABB4;  
   position: absolute;
   top: 50%;
   left: 50%;
@@ -79,7 +93,6 @@ a{
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 8px;
 }
 
 .help p {
@@ -90,3 +103,139 @@ a{
   height: 100%;
 }
 
+.response-parent h4{
+  display: flex;
+  font-size: 16px;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+}
+.responsebtn-parent{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+.responsebtn{
+  padding: 10px 20px;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  background-color:#26ABB4;
+  color: #fff;
+  font-weight: 500;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+}
+.nearbyhelper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  width: 300px;
+  background-color: grey;
+  gap: 10px;
+  margin: 10px 20px;
+}
+
+.emergencyform{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+ .emergencyform textarea{
+  width: 100%; 
+  padding: 20px 50px;
+}
+.emergencyform input[type="text"],
+.emergencyform input[type="tel"] {
+  width: 100%; 
+  border: 1px solid #ccc;
+  padding: 8px 40px;
+  border-radius: 4px;
+  color: #333;
+}
+
+.submitbtn{
+  display: block;
+  margin: 0 auto;
+  width: 140px;
+  height: 40px;
+  padding: 4px;
+  margin-top: 10px;
+  outline: none;
+  border: none;
+  background-color:#26ABB4;
+  color: #fff; 
+  font-weight: 500;
+}
+.custom-circle{
+  background-color:#3B5F95; ;
+}
+
+.custom-card{
+  width: 343px;
+  height: 107px;
+  flex-shrink: 0;
+}
+
+.volbtn{
+   width: 109px;
+   height: 30px;
+   flex-shrink: 0;
+   background: #31B9B9;
+   outline: none;
+   border: none;
+   margin-top: 13px;
+  }
+
+.verify-parent{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+
+}
+.verifyinputparnet{
+  gap: 10px;
+}
+
+  .verifyinput{
+    width: 180px;
+    height: 34px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: #ffffff;
+    border: none;
+    outline: none;
+  }
+  .verifybtn{
+    width: 140px;
+    height: 44px;
+    color: #FFF;
+    font-size: 18px;
+    background: #5CB2BE;
+    outline: none;
+    border: none;
+  }
+  .verify-div{
+    width: 44px;
+    height: 30px;
+    font-weight: bold;
+    background: #fff;
+    color: #000;
+  }
+  .vol-reg input[type="text"],
+  .vol-reg input[type="email"],
+  .vol-reg input[type="password"]
+  {
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom:0.5px solid black;
+  
+  }

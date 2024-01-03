@@ -7,7 +7,7 @@ const Login = () => {
         <div className="text-center">
           <h4 className="fw-bold">HelpYours!</h4>
         </div>
-        <h4 className="text-center mt-2 fw-bold">Log In</h4>
+        <h4 className="text-center mt-2 fw-bold mb-3">Log In</h4>
 
         <form  className="form-container">
          
@@ -35,8 +35,8 @@ const Login = () => {
         </form>
         <p style={{color:"rgb(19, 83, 83)"}}><Link>forgot password?</Link></p>
 
-        <button type="submit" className="signupbtn fw-bold" >Log In</button>
-
+        <button type="submit" className="signupbtn fw-bold  " >Log In</button>
+         <p style={{color:"#48B09D",paddingTop:"10px"}}>Not Registered yet?<span ><Link >Sign Up</Link></span> </p>
       </div>
      );
 }

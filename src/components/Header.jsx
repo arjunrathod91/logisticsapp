@@ -46,7 +46,9 @@ const Header = (props) => {
           <FontAwesomeIcon
             icon={faBell}
             className="text-dark"
-            style={{ fontSize: "1.5rem" }}
+            style={{ width: "25px",
+              height: "22.222px",
+              flexShrink: "0" }}
           />
         </div>
       </div>

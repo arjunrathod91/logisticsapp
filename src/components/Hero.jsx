@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 const Hero = () => {
     return(
          <>
-           <div className ='container d-flex flex-column justify-content-center align-items-center pt-5'>
+           <div className ='container d-flex flex-column justify-content-center align-items-center' style={{paddingTop:"100px"}}>
                <div className="circle"></div>
                <div className="text-center">
                  <h4 className="fw-bold">HelpYours!</h4>
