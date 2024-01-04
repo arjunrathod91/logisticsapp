@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Header from "./Header";
 
 const VolunteerProfile = () => {
@@ -36,7 +37,7 @@ const VolunteerProfile = () => {
         </div>
 
       </div>
-      <button className="volbtn">Ask For Help</button>
+      <Link to="/responsemsg"><button className="volbtn" style={{color:"white"}}>Ask For Help</button></Link>
     </div>
   );
 };

@@ -1,0 +1,57 @@
+const googleMapsUrl = `https://www.google.com/maps/embed/v1/view?key=YOUR_API_KEY&center=${latitude},${longitude}&zoom=15`;
+
+
+<iframe
+        width="600"
+        height="450"
+        loading="lazy"
+        allowFullScreen
+        src={googleMapsUrl}
+      ></iframe>
+
+      <MapEmbed latitude={latitude} longitude={longitude} />
+      const latitude = 40.7128; // Example latitude
+      const longitude = -74.0060;
+
+
+      const askForLocationPermission = () => {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(
+            () => {
+              // Handle successful retrieval of location
+              // Do something with the obtained location
+            },
+            (error) => {
+              if (error.code === error.PERMISSION_DENIED) {
+                // Permission denied
+                alert('You denied permission to access your location.');
+              } else {
+                // Other errors
+                alert('Error while fetching location.');
+              }
+            }
+          );
+        } else {
+          alert('Geolocation is not supported by this browser.');
+        }
+      };      
+
+      const getLocation = () => {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(showPosition, showError);
+        } else {
+          // Geolocation is not supported by this browser
+          // Handle accordingly
+          console.log("Geolocation is not supported by this browser");
+        }
+      };
+
+      const showPosition = (position) => {
+        const userLatitude = position.coords.latitude;
+        const userLongitude = position.coords.longitude;
+        // Do something with the obtained latitude and longitude
+      };
+
+
+	
+      GPS Coordinates - Website      

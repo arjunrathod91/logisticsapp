@@ -57,7 +57,7 @@ const Login = () => {
             />
           </div>
 
-       <Link to="/login"><button type="submit" className="signupbtn fw-bold" >Sign Up</button></Link>
+       <Link to="/verify"><button type="submit" className="signupbtn fw-bold" >Sign Up</button></Link>
        <p style={{color:"#48B09D",marginTop:"10px"}}>Already have an account ?<span className="fw-bold"><Link style={{color: "#40C6AE"}} to="/login">Log In</Link></span> </p>
        </form>
       </div>

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Header from './Header'
 
 
@@ -7,7 +8,7 @@ const AskForHelp = () => {
         <Header />
 
         <div >
-          <p className="help">Ask For A Help</p> 
+          <Link to="/useremergencyinfo"><p className="help">Ask For A Help</p></Link>
         </div>
         </>
       );
