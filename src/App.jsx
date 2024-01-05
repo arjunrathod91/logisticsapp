@@ -1,26 +1,29 @@
 import {Route,Routes}from 'react-router-dom';
 import ChooseAuth from './components/ChooseAuth'
 import Hero from './components/Hero'
-import Login from './components/Login';
-import SignUp from './components/SignUp';
+import Login from './components/User/Login';
+import SignUp from './components/User/SignUp';
 import Header from './components/Header';
-import AskForHelp from './components/AskForHelp';
-import UserEmergencyInfo from './components/userEmergencyInfo';
-import Responsemsg from './components/ResponseMsg';
-import NearbyHelpers from './components/NearbyHelpers';
-import VolunteerProfile from './components/VolunteerProfile';
-import Verify from './components/Verify';
+import AskForHelp from './components/User/AskForHelp';
+import UserEmergencyInfo from './components/User/userEmergencyInfo';
+import Responsemsg from './components/User/ResponseMsg';
+import NearbyHelpers from './components/User/NearbyHelpers';
+import VolunteerProfile from './components/User/VolunteerProfile';
+import Verify from './components/User/Verify';
 import VolRegister from './components/Volunteer/VolRegister';
 import Organization from './components/Volunteer/Organization';
 import ContactDetails from './components/Volunteer/ContactDetails';
-import MyContext from './Contexts/AllContext';
 import { useState } from 'react';
+import Mainpage from './components/Volunteer/Mainpage';
+import { MyContextProvider } from './Contexts/AllContext';
+import UserInfo from './components/Volunteer/UserInfo';
+import VolProfile from './components/Volunteer/VolProfile';
+import VolVerify from './components/Volunteer/VolVerify';
 
 function App() {
-  const [latitude,setLatitude] = useState(0)
-  const [longitude,setLongitude] = useState(0)
+
   return (
-    <MyContext.Provider value={{latitude,setLatitude,longitude,setLongitude}}>
+    <MyContextProvider>
     <div className=" App">
       <Routes>
        <Route exact path="/" element={<Hero />}/>
@@ -37,9 +40,13 @@ function App() {
        <Route  path="/volregister" element={<VolRegister />}/>
        <Route  path="/volorganization" element={<Organization />}/>
        <Route  path="/volcontact" element={<ContactDetails />}/>
+       <Route  path="/volvarify" element={<VolVerify />}/>
+       <Route path='/mainpage' element={<Mainpage/>}/>
+       <Route path='/user-info' element={<UserInfo/>}/>
+       <Route path='/volprofile' element={<VolProfile/>}/>
       </Routes>
       </div> 
-      </MyContext.Provider> 
+      </MyContextProvider>
       )
 }
 

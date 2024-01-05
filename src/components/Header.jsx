@@ -13,20 +13,20 @@ import {
 
 const tabs = [
   {
-    route: "/home",
+    route: "/user-home",
     icon: faHome,
   },
   {
-    route: "/search",
+    route: "/user-emergency",
     icon: faExclamationCircle,
   },
 
   {
-    route: "/login",
+    route: "/user-messages",
     icon: faEnvelope,
   },
   {
-    route: "/login",
+    route: "/user-profile",
     icon: faUserCircle,
   },
 ];
