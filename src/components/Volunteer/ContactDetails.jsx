@@ -1,14 +1,12 @@
 import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import MyContext from "../../Contexts/AllContext";
-const ContactDetails = () => {
 
-    const {latitude,longitude,setLatitude,setLongitude} = useContext(MyContext)
+const ContactDetails = () => {
     
     const nevigate = useNavigate()
 
     const handleSubmit=()=>{
-        nevigate('/')
+        nevigate('/volvarify')
         
     }
 
@@ -41,7 +39,7 @@ const ContactDetails = () => {
         <strong className="mb-4" style={{ fontSize: "24px" }}>
           Contact Details
         </strong>
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="d-flex flex-column mb-2">
             <label
               htmlFor="organization-name"
@@ -105,7 +103,7 @@ const ContactDetails = () => {
               className="border-b container"
             />
           </div>
-          <button className="container-fluid" style={{backgroundColor:"#26ABB4",padding:'5px',width:"100px",fontSize:"18px"}}>Submit</button>
+          <button type="submit" className="container-fluid" style={{backgroundColor:"#26ABB4",padding:'5px',width:"100px",fontSize:"18px"}}>Submit</button>
         </form>
       </div>
     </div>

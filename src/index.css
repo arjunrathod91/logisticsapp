@@ -258,3 +258,33 @@ line-height: normal;
   .border-b{
     border-bottom: 1px solid black;
   }
+
+
+/* Volunteer main Page*/  
+.request-box{
+  height: 100px;
+  width: 90%;
+  background-color: rgb(41, 169, 204);
+  color: white;
+  margin: 5px;
+}
+.rounded{
+  border-radius: 50%;
+}
+.center-flex{
+  display: flex;
+  justify-content: center;
+  align-items:center ;
+}
+.start-flex{
+  display: flex;
+  justify-content: center;
+  align-items:start ;
+}
+.right{
+  padding-top: 10px;
+}
+.right p{
+  margin-bottom: 0;
+
+}
