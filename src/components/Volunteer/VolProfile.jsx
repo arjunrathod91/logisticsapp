@@ -1,9 +1,17 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import VolHeader from './VolHeader'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPhone } from '@fortawesome/free-solid-svg-icons'
+import axios from 'axios'
 
 const VolProfile = () => {
+    const [profile,setProfile] = useState([])
+
+    useEffect(()=>{
+        axios.get('http://localhost:3002/getVol')
+        .then(result=>console.log(result.data))
+        .catch(err=>console.log(err))
+    },[])
   return (
     <div>
         <VolHeader/>

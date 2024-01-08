@@ -1,6 +1,26 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { MyContext } from "../../Contexts/AllContext";
+import { useContext, useState } from "react";
+import axios from "axios";
 
 const VolVerify = () => {
+
+  const { voldata,setVolData, username, email, password, confirmpassword, organizationName, organizationHead, aboutOrganization, whatWeProvide, numberOfWorkers, experience, licence, contact1, contact2, tollFreeNumber, address,verifyNumber,setVerifyNumber } = useContext(MyContext)
+
+  const navigate = useNavigate()
+
+  const submit = (e) => {
+    e.preventDefault();
+    axios.post('http://localhost:3002/setVol', { username, email, password, confirmpassword, organizationName, organizationHead, aboutOrganization, whatWeProvide, numberOfWorkers, experience, licence, contact1, contact2, tollFreeNumber, address,verifyNumber})
+      .then(details => {
+        console.log(details)
+        setTimeout(()=>{
+          navigate('/mainpage')
+        },2000)
+      })
+      .catch(err => console.log(err))
+
+  }
   return (
     <div className="container verify-parent">
       <div>
@@ -10,20 +30,16 @@ const VolVerify = () => {
         </h6>
       </div>
       <div className="d-flex verifyinputparnet mt-5 mb-4">
-        <div className="verify-div">+91</div>
-        <input
-          type="tel"
-          name="tel"
-          id="tel"
-          placeholder="Enter Your Mobile no."
-          className="verifyinput"
-        />
+        <input type="text" 
+        onChange={(e) => setVerifyNumber(e.target.value)}
+        name="verifyNumber"
+ />
       </div>
       <div>
-        <Link to="/mainpage"><button className="verifybtn">Verify</button></Link>
+        <button type="submit" onClick={submit} className="verifybtn">Verify</button>
       </div>
     </div>
-  );
-};
+  )
+}
 
 export default VolVerify;

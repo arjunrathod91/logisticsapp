@@ -4,18 +4,19 @@ const VolunteerSchema = new mongoose.Schema({
     username:String,
     email:String,
     password:String,
-    confirmpassword:String
-    // contactNo:String,
-    // profile:String,
-    // organization:String,
-    // organizationArea:String,
-    // organizationHead:String,
-    // numberOfEmplyee:String,
-    // experience:String,
-    // licence:String,
-    // contact1:String,
-    // contact2:String,
-    // address:String,
+    confirmpassword:String,
+    organizationName:String,
+    aboutOrganization:String,
+    whatYouProvide:String,
+    organizationHead:String,
+    numberOfWorkers:String,
+    experience:String,
+    licence:String,
+    contact1:String,
+    contact2:String,
+    tollFreeNumber:String,
+    address:String,
+    verifyNumber:String
     // img:String
 })
 

@@ -1,24 +1,16 @@
 import axios from "axios";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { MyContext } from "../../Contexts/AllContext";
 import io from 'socket.io-client';
 
 const VolRegister = () => {
-  const {voldata,setVolData} = useContext(MyContext)
-  const [username,setUsername] = useState('')
-    const [email,setEmail] = useState('')
-    const [password,setPassword] = useState('')
-    const [confirmpassword,setConfirmPassword] = useState('')
-    // const [profile,setProfile] = useState()
-    const navigate = useNavigate('')
+  const {setUsername,setEmail,setPassword,setConfirmPassword} = useContext(MyContext)
+    const navigate = useNavigate()
     
 
   const submitData=(e)=>{
-    // e.preventDefault();
-    // axios.post('http://localhost:3002/setVol',{username,email,password,confirmpassword})
-    // .then(details => console.log(details.data))
-    // .catch(err => console.log(err))
+    e.preventDefault();
     navigate("/volorganization")
   }
 
@@ -40,6 +32,17 @@ const VolRegister = () => {
   //     socket.disconnect();
   //   };
   // }, []);
+
+  // useEffect(()=>{]
+
+  //   axios.get('http://localhost:3002/getVol')
+  //   .then(detail=>console.log(detail))
+  //   .catch(err=>console.log(err))
+  // },[])
+  const update=async (e)=>{
+    
+
+  }
 
 
 
@@ -101,7 +104,7 @@ const VolRegister = () => {
           </div> */}
           <button type="submit" className="submitbtn">Submit</button>
        </form>
-       <p style={{color:"#48B09D",marginTop:"10px"}}>Already have an account ?<span className="fw-bold"><Link style={{color: "#40C6AE"}} to="/login">Log In</Link></span> </p>
+       <p style={{color:"#48B09D",marginTop:"10px"}}>Already have an account ?<span className="fw-bold"><Link style={{color: "#40C6AE"}} to="/vol-login">Log In</Link></span> </p>
       </div>
     </>
   );

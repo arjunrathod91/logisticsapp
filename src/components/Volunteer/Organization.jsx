@@ -1,17 +1,22 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 
 import { Link, useNavigate } from "react-router-dom";
+import { MyContext } from "../../Contexts/AllContext";
 
 const Organization = () => {
-    const nevigate = useNavigate()
 
-    const handleSubmit=()=>{
-        nevigate('/volcontact')
-        
-    }
+  const nevigate = useNavigate()
+
+  const {setOrganizationName,setOrganizationHead,setWhatYouProvide,setAboutOrganization,setNumberOfWorkers,setExperience,setLicence} = useContext(MyContext)
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    nevigate('/volcontact')
+
+  }
   return (
     <div className="d-flex container-fluid vh-100 flex-column justify-content-center align-items-center">
       <div className="circle"></div>
@@ -23,27 +28,35 @@ const Organization = () => {
         <form action="#">
           <div className="d-flex flex-column mb-2">
             <label
-              htmlFor="organization-name"
+              htmlFor="organizationName"
               className=""
               style={{ fontSize: "19px" }}
             >
               Organization Name{" "}
             </label>
-            <input type="text" className="border-b container" />
+            <input 
+            type="text" 
+            className="border-b container" 
+            name="organizationName" 
+            onChange={(e) => setOrganizationName(e.target.value)} />
           </div>
           <div className="d-flex flex-column mb-2">
             <label
-              htmlFor="organization-name"
+              htmlFor="whatYouProvide"
               className=""
               style={{ fontSize: "19px" }}
             >
-              Area Of Organization
+              What You Provide
             </label>
-            <input type="text" className="border-b container" />
+            <input 
+            type="text" 
+            className="border-b container" 
+            name="whatYouProvide"
+            onChange={(e) => setWhatYouProvide(e.target.value)} />
           </div>
           <div className="d-flex flex-column mb-2">
             <label
-              htmlFor="organization-name"
+              htmlFor="aboutOrganiztion"
               className=""
               style={{ fontSize: "19px" }}
             >
@@ -51,13 +64,14 @@ const Organization = () => {
             </label>
             <input
               type="text"
-              name="organization-name"
+              name="aboutOrganization"
               className="border-b container"
+              onChange={(e) => setAboutOrganization(e.target.value)}
             />
           </div>
           <div className="d-flex flex-column mb-2">
             <label
-              htmlFor="organization-name"
+              htmlFor="organizationHead"
               className=""
               style={{ fontSize: "19px" }}
             >
@@ -65,13 +79,14 @@ const Organization = () => {
             </label>
             <input
               type="text"
-              name="organization-name"
+              name="organizationHead"
               className="border-b container"
+              onChange={(e) => setOrganizationHead(e.target.value)}
             />
           </div>
           <div className="d-flex flex-column mb-2">
             <label
-              htmlFor="organization-name"
+              htmlFor="numberOfWorkers"
               className=""
               style={{ fontSize: "19px" }}
             >
@@ -79,13 +94,14 @@ const Organization = () => {
             </label>
             <input
               type="text"
-              name="organization-name"
+              name="numberOfWorkers"
               className="border-b container"
+              onChange={(e) => setNumberOfWorkers(e.target.value)}
             />
           </div>
           <div className="d-flex flex-column mb-2">
             <label
-              htmlFor="organization-name"
+              htmlFor="experience"
               className=""
               style={{ fontSize: "19px" }}
             >
@@ -93,13 +109,14 @@ const Organization = () => {
             </label>
             <input
               type="text"
-              name="organization-name"
+              name="experience"
               className="border-b container"
+              onChange={(e) => setExperience(e.target.value)}
             />
           </div>
           <div className="d-flex flex-column mb-2">
             <label
-              htmlFor="organization-name"
+              htmlFor="licence"
               className=""
               style={{ fontSize: "19px" }}
             >
@@ -107,11 +124,12 @@ const Organization = () => {
             </label>
             <input
               type="text"
-              name="organization-name"
+              name="licence"
               className="border-b container"
+              onChange={(e) => setLicence(e.target.value)}
             />
           </div>
-          <Link to="/volcontact"><button type="" placeholder="Submit" className="container-fluid mt-3"><FontAwesomeIcon icon={faCircleArrowRight} size="2x" style={{ color: '#26ABB4' }}/></button></Link>
+          <Link to="/volcontact"><button type="" placeholder="Submit" className="container-fluid mt-3"><FontAwesomeIcon icon={faCircleArrowRight} size="2x" style={{ color: '#26ABB4' }} /></button></Link>
         </form>
       </div>
     </div>
