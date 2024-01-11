@@ -1,57 +1,153 @@
-const googleMapsUrl = `https://www.google.com/maps/embed/v1/view?key=YOUR_API_KEY&center=${latitude},${longitude}&zoom=15`;
+// const googleMapsUrl = `https://www.google.com/maps/embed/v1/view?key=YOUR_API_KEY&center=${latitude},${longitude}&zoom=15`;
 
 
-<iframe
-        width="600"
-        height="450"
-        loading="lazy"
-        allowFullScreen
-        src={googleMapsUrl}
-      ></iframe>
+// <iframe
+//         width="600"
+//         height="450"
+//         loading="lazy"
+//         allowFullScreen
+//         src={googleMapsUrl}
+//       ></iframe>
 
-      <MapEmbed latitude={latitude} longitude={longitude} />
-      const latitude = 40.7128; // Example latitude
-      const longitude = -74.0060;
+//       <MapEmbed latitude={latitude} longitude={longitude} />
+//       const latitude = 40.7128; // Example latitude
+//       const longitude = -74.0060;
 
 
-      const askForLocationPermission = () => {
-        if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(
-            () => {
-              // Handle successful retrieval of location
-              // Do something with the obtained location
-            },
-            (error) => {
-              if (error.code === error.PERMISSION_DENIED) {
-                // Permission denied
-                alert('You denied permission to access your location.');
-              } else {
-                // Other errors
-                alert('Error while fetching location.');
-              }
-            }
-          );
-        } else {
-          alert('Geolocation is not supported by this browser.');
-        }
-      };      
+//       const askForLocationPermission = () => {
+//         if (navigator.geolocation) {
+//           navigator.geolocation.getCurrentPosition(
+//             () => {
+//               // Handle successful retrieval of location
+//               // Do something with the obtained location
+//             },
+//             (error) => {
+//               if (error.code === error.PERMISSION_DENIED) {
+//                 // Permission denied
+//                 alert('You denied permission to access your location.');
+//               } else {
+//                 // Other errors
+//                 alert('Error while fetching location.');
+//               }
+//             }
+//           );
+//         } else {
+//           alert('Geolocation is not supported by this browser.');
+//         }
+//       };      
 
-      const getLocation = () => {
-        if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(showPosition, showError);
-        } else {
-          // Geolocation is not supported by this browser
-          // Handle accordingly
-          console.log("Geolocation is not supported by this browser");
-        }
-      };
+//       const getLocation = () => {
+//         if (navigator.geolocation) {
+//           navigator.geolocation.getCurrentPosition(showPosition, showError);
+//         } else {
+//           // Geolocation is not supported by this browser
+//           // Handle accordingly
+//           console.log("Geolocation is not supported by this browser");
+//         }
+//       };
 
-      const showPosition = (position) => {
-        const userLatitude = position.coords.latitude;
-        const userLongitude = position.coords.longitude;
-        // Do something with the obtained latitude and longitude
-      };
+//       const showPosition = (position) => {
+//         const userLatitude = position.coords.latitude;
+//         const userLongitude = position.coords.longitude;
+//         // Do something with the obtained latitude and longitude
+//       };
 
 
 	
-      GPS Coordinates - Website      
+//       GPS Coordinates - Website  
+      
+// socket.on('recieve',data=>{
+//   append(`${data.message}:${data.user}`,left)
+// })
+      
+//       socket.on('user-joined',data=>{
+//         append(`${nama} joined the chat`,'')
+//     })
+
+//     socket.on('send',(message)=>{
+//       socket.broadcast.emit('receive',{
+//         message:message,
+//         nama:user[socket.id],
+  
+//       })
+//     })
+
+//     socket.on('new-user-joined',(nama)=>{
+//       users[socket.id] = nama;
+//       socket.broadcast.emit('user-joined',nama)
+      
+//     })
+
+
+
+
+////////
+<div className="d-flex container-fluid vh-100 flex-column justify-content-center align-items-center">
+      <div className="circle"></div>
+      <strong>HelpYours !</strong>
+      <div className="organization-form mt-5 d-flex flex-column justify-content-start p-3">
+        <strong className="mb-4" style={{ fontSize: "24px" }}>
+          Contact Details
+        </strong>
+        <form onSubmit={handleSubmit}>
+          <div className="d-flex flex-column mb-2">
+            <label
+              htmlFor="contact1"
+              className=""
+              style={{ fontSize: "19px" }}
+            >
+              Contact no: 1
+            </label>
+            <input type="text" 
+            className="border-b container" 
+            name="contact1" 
+            // onChange={(e)=>setContact1(e.target.value)} 
+            />
+          </div>
+          <div className="d-flex flex-column mb-2">
+            <label
+              htmlFor="contactw2"
+              className=""
+              style={{ fontSize: "19px" }}
+            >
+              Contact no: 2
+            </label>
+            <input type="text" className="border-b container" name="contact2" 
+            // onChange={(e)=>setContact2(e.target.value)} 
+            />
+          </div>
+          <div className="d-flex flex-column mb-2">
+            <label
+              htmlFor="tolFreeNumber"
+              className=""
+              style={{ fontSize: "19px" }}
+            >
+              Toll Free Number
+            </label>
+            <input
+              type="text"
+              name="tollFreeNumber"
+              className="border-b container"
+              // onChange={(e)=>setTollFreeNumber(e.target.value)}
+            />
+          </div>
+          <div className="d-flex flex-column mb-2">
+            <label
+              htmlFor="address"
+              className=""
+              style={{ fontSize: "19px" }}
+            >
+             Address
+            </label>
+            <input
+              type="text"
+              name="address"
+              className="border-b container"
+              // onChange={(e)=>setAddress(e.target.value)}
+            />
+            </div>
+            <button onClick={handleLocation}>use Current Location</button>
+          <button type="submit" className="container-fluid" style={{backgroundColor:"#26ABB4",padding:'5px',width:"100px",fontSize:"18px"}}>Submit</button>
+        </form>
+      </div>
+    </div>

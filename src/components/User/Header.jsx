@@ -13,11 +13,11 @@ import {
 
 const tabs = [
   {
-    route: "/mainpage",
+    route: "/userpage",
     icon: faHome,
   },
   {
-    route: "/user-emergency",
+    route: "/userprofile",
     icon: faExclamationCircle,
   },
 
@@ -26,12 +26,12 @@ const tabs = [
     icon: faEnvelope,
   },
   {
-    route: "/volprofile",
+    route: "/userprofile",
     icon: faUserCircle,
   },
 ];
 
-const VolHeader = (props) => {
+const Header = (props) => {
   return (
     <div className="pt-3">
       <div className="d-flex justify-content-around">
@@ -83,4 +83,4 @@ const VolHeader = (props) => {
   );
 };
 
-export default VolHeader;
+export default Header;

@@ -3,7 +3,7 @@ import ChooseAuth from './components/ChooseAuth'
 import Hero from './components/Hero'
 import Login from './components/User/Login';
 import SignUp from './components/User/SignUp';
-import Header from './components/Header';
+import Header from './components/User/Header';
 import AskForHelp from './components/User/AskForHelp';
 import UserEmergencyInfo from './components/User/userEmergencyInfo';
 import Responsemsg from './components/User/ResponseMsg';
@@ -19,6 +19,10 @@ import { MyContextProvider } from './Contexts/AllContext';
 import UserInfo from './components/Volunteer/UserInfo';
 import VolProfile from './components/Volunteer/VolProfile';
 import VolVerify from './components/Volunteer/VolVerify';
+import VolLogin from './components/Volunteer/VolLogin';
+import UserProfile from './components/User/UserProfile';
+import EditInfo from './components/User/EditInfo';
+import VolEditInfo from './components/Volunteer/VolEditInfo';
 
 function App() {
 
@@ -36,14 +40,18 @@ function App() {
        <Route  path="/responsemsg" element={<Responsemsg />}/>
        <Route  path="/nearbyhelpers" element={<NearbyHelpers />}/>
        <Route  path="/volunteerprofile" element={<VolunteerProfile />}/>
+       <Route  path="/userprofile" element={<UserProfile />}/>
+       <Route  path="/editinfo" element={<EditInfo />}/>
        <Route  path="/verify" element={<Verify />}/>
        <Route  path="/volregister" element={<VolRegister />}/>
+       <Route  path="/vol-login" element={<VolLogin />}/>
        <Route  path="/volorganization" element={<Organization />}/>
        <Route  path="/volcontact" element={<ContactDetails />}/>
        <Route  path="/volvarify" element={<VolVerify />}/>
        <Route path='/mainpage' element={<Mainpage/>}/>
        <Route path='/user-info' element={<UserInfo/>}/>
        <Route path='/volprofile' element={<VolProfile/>}/>
+       <Route  path="/vol-editinfo" element={<VolEditInfo/>}/>
       </Routes>
       </div> 
       </MyContextProvider>
