@@ -5,12 +5,13 @@ import { faCircleArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 import { Link, useNavigate } from "react-router-dom";
 import { MyContext } from "../../Contexts/AllContext";
+import { FormSelect } from "react-bootstrap";
 
 const Organization = () => {
 
   const nevigate = useNavigate()
 
-  const {setOrganizationName,setOrganizationHead,setWhatYouProvide,setAboutOrganization,setNumberOfWorkers,setExperience,setLicence} = useContext(MyContext)
+  const { setOrganizationName, setOrganizationHead, setArea, setAboutOrganization, setNumberOfWorkers, setExperience, setLicence } = useContext(MyContext)
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -34,25 +35,27 @@ const Organization = () => {
             >
               Organization Name{" "}
             </label>
-            <input 
-            type="text" 
-            className="border-b container" 
-            name="organizationName" 
-            onChange={(e) => setOrganizationName(e.target.value)} />
+            <input
+              type="text"
+              className="border-b container"
+              name="organizationName"
+              onChange={(e) => setOrganizationName(e.target.value)} />
           </div>
           <div className="d-flex flex-column mb-2">
             <label
-              htmlFor="whatYouProvide"
+              htmlFor="area"
               className=""
               style={{ fontSize: "19px" }}
             >
               What You Provide
             </label>
-            <input 
-            type="text" 
-            className="border-b container" 
-            name="whatYouProvide"
-            onChange={(e) => setWhatYouProvide(e.target.value)} />
+            <FormSelect onChange={(e)=>setArea(e.target.value)}>
+              <option value="">--Select--</option>
+              <option value="Ambulance">Ambulance</option>
+              <option value="Medicine">Medicene</option>
+              <option value="FirstAid">First Aid</option>
+              <option value="FireBus">Fire Bus</option>
+            </FormSelect>
           </div>
           <div className="d-flex flex-column mb-2">
             <label

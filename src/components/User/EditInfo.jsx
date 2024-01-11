@@ -3,35 +3,52 @@ import React, { useContext, useState } from 'react'
 import { Link, Navigate, useNavigate } from 'react-router-dom'
 import { MyContext } from '../../Contexts/AllContext'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCircleCheck } from '@fortawesome/free-solid-svg-icons'
+import { faCircleCheck, faCircleXmark } from '@fortawesome/free-solid-svg-icons'
 
 const EditInfo = () => {
   const [success, setSuccess] = useState(false)
   const [failed, setFailed] = useState(false)
 
+  const { userData, setUserData } = useContext(MyContext)
 
-  const {setLoginData,loginData} = useContext(MyContext)
-
-  const [username,setUsername] = useState('')
-  const [email,setEmail] = useState('')
-  const [password,setPassword] = useState('')
-  const [contact,setContact] = useState('')
-  const [location,setLocation] = useState('')
+  const [username, setUsername] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [contact, setContact] = useState('')
+  const [location, setLocation] = useState('')
+  const userId = userData._id
 
   const navigate = useNavigate()
 
-  const submit=(e)=>{
+  const submit = (e) => {
     e.preventDefault()
-    setSuccess(true)
-    setTimeout(()=>{
-      setSuccess(false)
-      navigate('/userprofile')
-    },3000)
+    axios.put(`http://localhost:3002/editUser/${userId}`, { username, email, password, contact, location })
+      .then((data) => {
+        console.log(userData._id)
+        console.log(userId)
+        console.log(data.data)
+        setUserData(data.data)
+        setSuccess(true)
+        setTimeout(() => {
+          setSuccess(false)
+          navigate('/userprofile')
+        }, 3000)
+      })
+      .catch(err => {
+        console.log(err)
+        setFailed(true)
+        setTimeout(() => {
+          setFailed(false)
+        }, 2000) 
+      })
   }
   return (
     <div className="d-flex container-fluid vh-100 flex-column justify-content-center align-items-center">
       <div className={success ? 'alert alert-success w-[300px] text-center' : 'd-none'} role="alert">
-      <FontAwesomeIcon icon={faCircleCheck} className='mr-3'/>Saved
+      <FontAwesomeIcon icon={faCircleCheck} className='mr-3'/>Login Successfully
+      </div>
+      <div className={failed ? 'alert alert-danger w-[300px] text-center' : 'd-none'} role="alert">
+      <FontAwesomeIcon icon={faCircleXmark} className='mr-3'/>Login Failed
       </div>
       <div className="circle"></div>
       <strong>HelpYours !</strong>
@@ -48,11 +65,11 @@ const EditInfo = () => {
             >
               Name :
             </label>
-            <input 
-            type="text" 
-            className="border-b container" 
-            name="username" 
-            onChange={(e) => setUsername(e.target.value)} />
+            <input
+              type="text"
+              className="border-b container"
+              name="username"
+              onChange={(e) => setUsername(e.target.value)} />
           </div>
           <div className="d-flex flex-column mb-2">
             <label
@@ -62,11 +79,11 @@ const EditInfo = () => {
             >
               Email :
             </label>
-            <input 
-            type="text" 
-            className="border-b container" 
-            name="email"
-            onChange={(e) => setEmail(e.target.value)} />
+            <input
+              type="text"
+              className="border-b container"
+              name="email"
+              onChange={(e) => setEmail(e.target.value)} />
           </div>
           <div className="d-flex flex-column mb-2">
             <label
@@ -76,11 +93,11 @@ const EditInfo = () => {
             >
               Change Password :
             </label>
-            <input 
-            type="text" 
-            className="border-b container" 
-            name="password"
-            onChange={(e) => setPassword(e.target.value)} />
+            <input
+              type="text"
+              className="border-b container"
+              name="password"
+              onChange={(e) => setPassword(e.target.value)} />
           </div>
           <div className="d-flex flex-column mb-2">
             <label
@@ -112,7 +129,7 @@ const EditInfo = () => {
               onChange={(e) => setLocation(e.target.value)}
             />
           </div>
-          <button type="submit" className="container-fluid mt-3" style={{backgroundColor:"teal",width:"100px",color:"white"}}>Save</button>
+          <button type="submit" className="container-fluid mt-3" style={{ backgroundColor: "teal", width: "100px", color: "white" }}>Save</button>
         </form>
       </div>
     </div>

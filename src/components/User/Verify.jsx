@@ -1,26 +1,75 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { FormSelect } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import Select from 'react-select';
+import emailjs from "@emailjs/browser";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleCheck, faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 
-const countryCodes = [
-
-];
 const Verify = () => {
+  const [submitted, setSubmitted] = useState(false)
+  const [verifyEmail,setVerifyEmail] = useState()
+  const [otp, setOtp] = useState(Math.floor(10000 + Math.random() * 90000))
+  const [verifyOtp,setVerifyOtp] = useState()
+  const [successAlert, setSuccessAlert] = useState(false)
+  const [failed, setFailed] = useState(false)
+
+  const ref = useRef();
+  const formRef = useRef();
+
   const navigate = useNavigate()
-  const [phoneNumber, setPhoneNumber] = useState('');
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    const a = document.getElementById('choose')
-    console.log(a.value + phoneNumber);
-    setTimeout(()=>{
-      navigate('/userpage')
-    },1000)
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setSubmitted(true)
+    console.log(otp)
 
-
+    emailjs
+      .sendForm(
+        "service_01fiesq",
+        "template_jdauwpi",
+        formRef.current,
+        "8vlDde0Y1hQ6NUYMm"
+      )
+      .then(
+        (result) => {
+          setSuccess(true);
+        },
+        (error) => {
+          setError(true);
+        }
+      );
   };
+
+  const next = () => {
+    sendEmail()
+    setSubmitted(true)
+  }
+  const submit = () => {
+    if (otp == verifyOtp) {
+      console.log('Your Otp Is Currect')
+      setSuccessAlert(true)
+      setTimeout(()=>{
+        setSuccessAlert(false)
+        navigate('/userpage')
+      },2000)
+    }
+    else{
+      console.log('Wrong Otp')
+      setFailed(true)
+      setTimeout(()=>{
+        setFailed(false)
+      },2000)
+    }
+  }
   return (
     <div className="container verify-parent">
+      <div className={successAlert ? 'alert alert-success w-[300px] text-center' : 'd-none'} role="alert">
+        <FontAwesomeIcon icon={faCircleCheck} className='mr-3' />Otp is Currect
+      </div>
+      <div className={failed ? 'alert alert-danger w-[300px] text-center' : 'd-none'} role="alert">
+        <FontAwesomeIcon icon={faCircleXmark} className='mr-3' />Invalid Otp
+      </div>
       <div>
         <p className="circle"></p>
         <h6 className="fw-bold" style={{ color: "#000" }}>
@@ -28,32 +77,34 @@ const Verify = () => {
         </h6>
       </div>
       <div className="d-flex verifyinputparnet mt-5 mb-4">
-        <form action="" onSubmit={handleSubmit}>
-          <select name="Choose" id="choose" onChange={(e)=>selectedCountryCode(e.target.value)}>
-            <option value="+91">Ind: + 91</option>
-            <option value="+92">Ame: + 92</option>
-            <option value="+93">Chi: + 93</option>
-            <option value="+94">USA: + 94</option>
-          </select>
-          <input
-            type="text"
-            value={phoneNumber}
-            onChange={(e) =>setPhoneNumber(e.target.value)}
-            placeholder="Enter Phone Number"
-          />
-          {/* <div className="verify-div">+91</div>
-          <input
-            type="text"
-            name="tel"
-            id="tel"
-            placeholder="Enter Your Mobile no."
-            onChange={(e) => setNumber(e.target.value)}
-            className="verifyinput"
-          /> */}
-          <div>
-            <button className="verifybtn" type="submit">Verify</button>
+        {
+          submitted ? <>
+          <div className="d-flex flex-column align-items-center justify-content-center gap-3">
+            <strong className="" style={{ fontSize: "19px" }}>Enter OTP</strong>
+            <input type="text"
+              onChange={(e) => setVerifyOtp(e.target.value)}
+              name="otp"
+              className="h-[40px] text-center rounded-3"
+              placeholder="XXXXX"
+              style={{ letterSpacing: "15px" }}
+              maxLength="5"
+            />
+            <button onClick={submit} className="verifybtn mt-2">Verify</button>
           </div>
-        </form>
+        </> :
+          <>
+            <form onSubmit={sendEmail} ref={formRef} className="d-flex flex-column align-items-center justify-content-center gap-3">
+              <strong style={{ fontSize: "19px" }}>Enter Your Email </strong>
+              <input type="text" className="" name="otp" value={otp} style={{ display: 'none' }} placeholder="otp" />
+              <input type="email"
+                onChange={(e) => setVerifyEmail(e.target.value)}
+                name="email"
+                className="h-[35px] rounded-3 border border-secondary text-xl px-3"
+              />
+              <button type="submit" className="verifybtn mt-2">Next</button>
+            </form>
+          </>
+        }
       </div>
     </div>
   );

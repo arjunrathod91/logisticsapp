@@ -7,7 +7,7 @@ const VolunteerSchema = new mongoose.Schema({
     confirmpassword:String,
     organizationName:String,
     aboutOrganization:String,
-    whatYouProvide:String,
+    area:String,
     organizationHead:String,
     numberOfWorkers:String,
     experience:String,
@@ -16,7 +16,6 @@ const VolunteerSchema = new mongoose.Schema({
     contact2:String,
     tollFreeNumber:String,
     address:String,
-    verifyNumber:String
     // img:String
 })
 

@@ -14,7 +14,7 @@ const MyContextProvider = ({ children }) => {
   const [confirmpassword, setConfirmPassword] = useState('')
   const [organizationName, setOrganizationName] = useState('')
   const [aboutOrganization, setAboutOrganization] = useState('')
-  const [whatYouProvide, setWhatYouProvide] = useState('')
+  const [area, setArea] = useState('')
   const [organizationHead, setOrganizationHead] = useState('')
   const [experience, setExperience] = useState('')
   const [numberOfWorkers, setNumberOfWorkers] = useState('')
@@ -23,15 +23,14 @@ const MyContextProvider = ({ children }) => {
   const [contact2, setContact2] = useState('')
   const [tollFreeNumber, setTollFreeNumber] = useState('')
   const [address, setAddress] = useState('')
-  const [verifyNumber, setVerifyNumber] = useState('')
   const [loginEmail,setLoginEmail] = useState('')
   const [loginPassword,setLoginPassword] = useState('')
-  const [loginData,setLoginData] = useState({})
+  const [userData,setUserData] = useState()
 
 
 
   return (
-    <MyContext.Provider value={{ username, setUsername, email, setEmail, password, setPassword, confirmpassword, setConfirmPassword, organizationName, setOrganizationName, whatYouProvide, setWhatYouProvide, organizationHead, setOrganizationHead, aboutOrganization, setAboutOrganization, setNumberOfWorkers, numberOfWorkers, experience, setExperience, licence, setLicence, contact1, setContact1, contact2, setContact2, tollFreeNumber, setTollFreeNumber, address, setAddress, verifyNumber, setVerifyNumber,loginEmail,setLoginEmail,loginPassword,setLoginPassword,loginData,setLoginData}}>
+    <MyContext.Provider value={{ username, setUsername, email, setEmail, password, setPassword, confirmpassword, setConfirmPassword, organizationName, setOrganizationName,area,setArea, organizationHead, setOrganizationHead, aboutOrganization, setAboutOrganization, setNumberOfWorkers, numberOfWorkers, experience, setExperience, licence, setLicence, contact1, setContact1, contact2, setContact2, tollFreeNumber, setTollFreeNumber, address, setAddress,loginEmail,setLoginEmail,loginPassword,setLoginPassword,userData,setUserData,voldata,setVolData}}>
       {children}
     </MyContext.Provider>
   );

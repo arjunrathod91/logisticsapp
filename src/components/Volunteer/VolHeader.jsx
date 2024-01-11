@@ -13,7 +13,7 @@ import {
 
 const tabs = [
   {
-    route: "/user-home",
+    route: "/mainpage",
     icon: faHome,
   },
   {

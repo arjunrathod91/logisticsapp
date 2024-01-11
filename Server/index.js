@@ -7,7 +7,6 @@ const Request = require('./Models/Request')
 const socketIo = require('socket.io');
 const http = require('http');
 
-
 const app = express()
 const server = http.createServer(app);
 const io = socketIo(server);
@@ -16,7 +15,23 @@ app.use(cors())
 
 mongoose.connect("mongodb://127.0.0.1:27017/Logistics")
 
+app.post('/newUser',(req,res)=>{
+  User.create(req.body)
+  .then(request => res.json(request))
+  .catch(err => res.json(err))
+})
 
+app.post('/setVol',(req,res)=>{
+  Volunteer.create(req.body)
+  .then(newVol => res.json(newVol))
+  .catch(err => res.json(err))
+})
+
+app.post('/sendRequest',(req,res)=>{
+  Request.create(req.body)
+  .then(request => res.json(request))
+  .catch(err => res.json(err))
+})
 
 app.get('/getUser', async (req,res)=>{
 
@@ -36,6 +51,14 @@ app.get('/getUser', async (req,res)=>{
 }
   )
 
+app.get('/userDetail/:userId',(req,res)=>{
+  const userId = req.params.userId
+  Request.findOne({_id:userId})
+    .then(response=>res.json(response))
+    .catch(err=>res.json(err));
+
+})    
+
 
 app.get('/getVolunteer',(req,res)=>{
 
@@ -54,18 +77,27 @@ app.get('/getVolunteer',(req,res)=>{
       });
   }
     )
-app.post('/setVol',(req,res)=>{
-    Volunteer.create(req.body)
-    .then(newVol => res.json(newVol))
+
+app.get('/getVol',(req,res)=>{
+    const userId = req.params.userId
+    Volunteer.findById({userId})
+    .then(newVol => {
+      console.log(userId)
+      res.json(newVol)
+    })
     .catch(err => res.json(err))
 })
 
-// app.get('/getVol',(req,res)=>{
-//     const userId = 65993ffb1cff4049e0f2b6ad
-//     Volunteer.findById({ _id: ObjectId(userId) })
-//     .then(newVol => res.json(newVol))
-//     .catch(err => res.json(err))
-// })
+app.get('/volunteerData/:userId',(req,res)=>{
+
+  const userId = req.params.userId;
+
+  Volunteer.findOne({_id:userId})
+    .then(response=>res.json(response))
+    .catch(err=>res.json(err));
+}
+  )
+
 
 app.post('/newUser',(req,res)=>{
     User.create(req.body)
@@ -91,19 +123,32 @@ app.get('/nearbyVol',(req,res)=>{
      .catch(err => res.json(err))
 })
 
-/*app.put('/getVol/:userId', (req,res)=>{
-    const UserId = req.params.userId;
-    console.log(UserId)
+app.put('/editUser/:userId', (req,res)=>{
+    const userId = req.params.userId;
+    console.log(userId)
     const updatedData = req.body;
     console.log(updatedData)
-    const updatedUser = Volunteer.findOneAndUpdate(
-        { _id: UserId },
+    User.findOneAndUpdate(
+        { _id: userId },
         { $set: updatedData }, 
         { new: true })
         .then(data=>res.json(data))
         .catch(err=>res.json(err))
-        })*/
- 
+        })
+        
+app.put('/editVol/:userId', (req,res)=>{
+  const userId = req.params.userId;
+  console.log(userId)
+  const updatedData = req.body;
+  console.log(updatedData)
+  Volunteer.findOneAndUpdate(
+      { _id: userId },
+      { $set: updatedData }, 
+      { new: true })
+      .then(data=>res.json(data))
+      .catch(err=>res.json(err))
+      })       
+        
 /*app.delete('/delUser/:userId',async (req,res)=>{
     try {
         const userId = req.params.userId;

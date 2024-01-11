@@ -8,8 +8,7 @@ import { faCircleCheck, faCircleXmark } from '@fortawesome/free-solid-svg-icons'
 const Login = () => {
   const [success, setSuccess] = useState(false)
   const [failed, setFailed] = useState(false)
-
-  const { setLoginData } = useContext(MyContext)
+  const {userData,setUserData} = useContext(MyContext)
   const navigate = useNavigate()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -21,7 +20,7 @@ const Login = () => {
     })
       .then((response) => {
         console.log(response.data);
-        setLoginData(response.data)
+        setUserData(response.data)
         setSuccess(true)
         setTimeout(() => {
           navigate('/userpage')

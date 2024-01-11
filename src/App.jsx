@@ -22,6 +22,7 @@ import VolVerify from './components/Volunteer/VolVerify';
 import VolLogin from './components/Volunteer/VolLogin';
 import UserProfile from './components/User/UserProfile';
 import EditInfo from './components/User/EditInfo';
+import VolEditInfo from './components/Volunteer/VolEditInfo';
 
 function App() {
 
@@ -50,6 +51,7 @@ function App() {
        <Route path='/mainpage' element={<Mainpage/>}/>
        <Route path='/user-info' element={<UserInfo/>}/>
        <Route path='/volprofile' element={<VolProfile/>}/>
+       <Route  path="/vol-editinfo" element={<VolEditInfo/>}/>
       </Routes>
       </div> 
       </MyContextProvider>
