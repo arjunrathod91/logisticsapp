@@ -3,7 +3,6 @@ import Header from './Header'
 import axios from 'axios';
 import { useContext, useEffect, useState } from 'react';
 import { MyContext } from '../../Contexts/AllContext';
-import { Link } from 'react-router-dom';
 import Header from '../Header'
 
 function NearbyHelpers() {
