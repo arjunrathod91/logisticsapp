@@ -47,8 +47,9 @@ function NearbyHelpers() {
                 <p className="card-text">Location:{item.address}</p>
               </div>
             </div>
-            </div>
+            </div>)}
     </div>
+ </div>
   );
 }
 
