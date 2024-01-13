@@ -13,26 +13,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { MyContext } from "../../Contexts/AllContext";
 
-const tabs = [
-  {
-    route: "/userpage",
-    icon: faHome,
-  },
-  {
-    route: "/userprofile",
-    icon: faExclamationCircle,
-  },
-
-  {
-    route: "/user-messages",
-    icon: faEnvelope,
-  },
-  {
-    route: "/userprofile",
-    icon: faUserCircle,
-  },
-];
-
 const Header = (props) => {
   const [notification, setNotification] = useState(false)
   const { voldata, setVolData } = useContext(MyContext)

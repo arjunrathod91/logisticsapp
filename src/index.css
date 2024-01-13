@@ -138,7 +138,7 @@ line-height: normal;
   align-items: center;
   font-weight: bold;
   width: 300px;
-  background-color: grey;
+  background-color: rgb(41, 169, 204);
   gap: 10px;
   margin: 10px 20px;
 }
@@ -245,10 +245,7 @@ line-height: normal;
 
   .organization-form{
     width: 400px;
-    height: 500px;
-
-  }
-  .organization-form form{
+    height: 450px;
   }
   .organization-form input{
     background-color:none;
@@ -259,6 +256,13 @@ line-height: normal;
     border-bottom: 1px solid black;
   }
 
+  .userinfo-img{
+    width:100px;
+   height:100px;
+   background-size: cover;
+   border-radius: 8px;
+  }
+
 
 /* Volunteer main Page*/  
 .request-box{
@@ -267,7 +271,13 @@ line-height: normal;
   background-color: rgb(41, 169, 204);
   color: white;
   margin: 5px;
+  cursor: pointer;
 }
+.map_img{
+  width: 300px;
+  height: 200px;
+}
+
 .rounded{
   border-radius: 50%;
 }
@@ -286,5 +296,27 @@ line-height: normal;
 }
 .right p{
   margin-bottom: 0;
+
+}
+
+
+
+@media screen and (max-width:768px) {
+  .organization-form{
+    width: 300px;
+   
+  }
+  .organization-form label{
+    font-size: 16px !important;
+  }
+  
+  .custom-card {
+    width: 300px;
+    height: 90px;
+  }
+  .map_img{
+    width: 200px;
+    height: 100px;
+  }
 
 }
