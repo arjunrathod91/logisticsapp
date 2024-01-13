@@ -6,12 +6,15 @@ const Volunteer = require('./Models/VolunteerModel')
 const Request = require('./Models/Request')
 const socketIo = require('socket.io');
 const http = require('http');
+const dotenv = require('dotenv');
 
+dotenv.config();
 const app = express()
 const server = http.createServer(app);
 const io = socketIo(server);
 app.use(express.json())
 app.use(cors())
+const port = process.env.PORT || 3002
 
 mongoose.connect("mongodb://127.0.0.1:27017/Logistics")
 
@@ -193,6 +196,6 @@ io.on('connection', (socket) => {
 //get    find 
 
 
-app.listen(3002,()=>{
+app.listen(port,()=>{
     console.log('server is running')
 })
