@@ -1,5 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom';
 import Header from './Header'
+import Footer from './Footer';
 
 const Responsemsg = () => {
    const navigate = useNavigate()
@@ -15,7 +16,7 @@ const Responsemsg = () => {
               <h4>Your response is send to the volunteer!<br>
               </br> He will get back to you very soon</h4>
            </div>
-          
+          <Footer/>
         </div>
      );
 }

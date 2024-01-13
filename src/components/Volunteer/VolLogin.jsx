@@ -22,8 +22,6 @@ const VolLogin = () => {
       .then((response) => {
         console.log(response.data);
         setVolData(response.data);
-        const setvol = {userId : response.data._id}
-        localStorage.setItem('setVol',JSON.stringify(setvol))
         setSuccess(true)
         setTimeout(() => {
           navigate('/mainpage')

@@ -5,19 +5,11 @@ import axios from "axios";
 
 const ContactDetails = () => {
   const { setContact1, setContact2, setTollFreeNumber, setAddress } = useContext(MyContext)
-  const { voldata, setVolData, username, email, password, confirmpassword, organizationName, organizationHead, aboutOrganization, area, numberOfWorkers, experience, licence, contact1, contact2, tollFreeNumber, address } = useContext(MyContext)
-
   const nevigate = useNavigate()
 
   const handleSubmit = (e) => {
     e.preventDefault();
     nevigate('/volvarify')
-    axios.post('http://localhost:3002/setVol', { username, email, password, confirmpassword, organizationName, organizationHead, aboutOrganization, area, numberOfWorkers, experience, licence, contact1, contact2, tollFreeNumber, address})
-      .then(details => {
-        console.log(details.data)
-        setVolData(data.data)
-      })
-      .catch(err => console.log(err))
 
   }
   // const showPosition = (position) => {

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import VolHeader from './VolHeader'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
@@ -8,6 +8,7 @@ import { MyContext } from '../../Contexts/AllContext'
 const Mainpage = () => {
 
   const [request,setRequest] = useState([])
+  const {voldata,setVolData} = useContext(MyContext)
 
   const navigate = useNavigate()
 
@@ -23,11 +24,12 @@ const Mainpage = () => {
   }
 
   useEffect(()=>{
+    // const area = voldata.area
     axios.get('http://localhost:3002/newRequest')
     .then((data)=>{
       setRequest(data.data)})
     .catch(err=>console.log(err))
-  },[request])
+  },[voldata])
 
   return (
     <div className="container">
@@ -35,7 +37,7 @@ const Mainpage = () => {
       <p className='ml-8 mt-5' style={{ fontSize: "20px", fontWeight: "bold" }}>Need a Help !</p>
       <div className='d-flex container-fluid flex-column  align-items-center'>
         {request.map((item)=>(
-          <div className='request-box mt-1 d-flex'>
+          <div className='request-box mt-1 d-flex' onClick={(e)=>userInfo(e,item)}>
           <div className='left w-[30%] h-[100%] center-flex' >
             <img src="https://th.bing.com/th?id=ORMS.d371f0730994d45f73252117479664bb&pid=Wdp&w=300&h=156&qlt=90&c=1&rs=1&dpr=1.25&p=0" alt="" className='w-[60px] h-[60px]' style={{backgroundColor:"red",borderRadius:'50%'}}/>
           </div>
