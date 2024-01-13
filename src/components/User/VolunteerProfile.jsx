@@ -68,19 +68,18 @@ const VolunteerProfile = () => {
           <p>Licence : {voldata.licence}</p>
         </div> */}
         <div>
+            <h6 className="fw-bold">Location</h6>
+           <img src="https://th.bing.com/th/id/OIP.120m6teR2_tGMfdTLz_G-AHaEK?w=321&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="" className='map_img'/>
+        </div>
+        <div>
           <strong>Contact</strong>
           <p>Contact 1 : {voldata.contact1}</p>
           <p>Contact 2 : {voldata.contact2}</p>
           <p>Toll Free Number : {voldata.tollFreeNumber}</p>
           <p>Email : {voldata.email}</p>
         </div>
-
-           <h6 className="fw-bold">Location</h6>
-           <img src="https://th.bing.com/th/id/OIP.120m6teR2_tGMfdTLz_G-AHaEK?w=321&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="" className='map_img'/>
+        <button className="volbtn container-fluid" style={{ color: "white" }} onClick={submit}>Ask For Help</button>
       </div>
-
-      </div>
-      <button className="volbtn container-fluid" style={{ color: "white" }} onClick={submit}>Ask For Help</button>
     </div>
   );
 };
