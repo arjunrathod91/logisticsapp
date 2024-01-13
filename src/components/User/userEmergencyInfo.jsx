@@ -83,7 +83,7 @@ const UserEmergencyInfo = () => {
               className=""
               style={{ fontSize: "19px" }}
             >
-              What You Provide
+              What Do You Want
             </label>
             <FormSelect onChange={(e)=>setHelp(e.target.value)} style={{width:'280px'}}>
               <option value="">--Select--</option>
@@ -104,7 +104,6 @@ const UserEmergencyInfo = () => {
             required
           />
         </div>
-        <p>use current location</p>
         <button type='submit' className='submitbtn'>Submit</button>
 
       </form>

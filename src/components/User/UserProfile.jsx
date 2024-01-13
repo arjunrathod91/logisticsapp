@@ -26,7 +26,6 @@ const UserProfile = () => {
                 <div className='container-fluid center-flex flex-col mt-10'>
                     <div>
                         <strong>Location : {userData.location}</strong>
-                        <img src="https://th.bing.com/th/id/OIP.120m6teR2_tGMfdTLz_G-AHaEK?w=321&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="" className='w-[500px] h-[200px]'/>
                         <p><FontAwesomeIcon icon={faPhone} className='mr-2'/> Contact : {userData.contact}</p>
                         <Link to="/editinfo"><button className='' style={{backgroundColor:"teal",color:"white",borderRadius:"10px"}}>Edit Information</button></Link>
                     </div>

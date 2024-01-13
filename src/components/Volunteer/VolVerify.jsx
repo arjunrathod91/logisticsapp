@@ -26,7 +26,8 @@ const VolVerify = () => {
     axios.post('http://localhost:3002/setVol', { username, email, password, confirmpassword, organizationName, organizationHead, aboutOrganization, area, numberOfWorkers, experience, licence, contact1, contact2, tollFreeNumber, address})
     .then(details => {
       console.log(details.data)
-      setVolData(data.data)
+      setVolData(details.data)
+      console.log(voldata)
     })
     .catch(err => console.log(err))
     setSubmitted(true)

@@ -10,8 +10,10 @@ function NearbyHelpers() {
   const [nearbyVol, setNearbyVol] = useState([])
   const navigate = useNavigate()
   useEffect(() => {
-    // const help = requestData.help
-    axios.get('http://localhost:3002/nearbyVol')
+    const help = requestData.help
+    axios.get('http://localhost:3002/nearbyVol',{
+      params:{help}
+    })
       .then((data) => {
         setNearbyVol(data.data)
       })
@@ -37,7 +39,7 @@ function NearbyHelpers() {
     <div className="container">
       <Header />
       <h4>Nearby Helpers</h4>
-      <div className="row">
+      <div className="row container-fluid">
         {nearbyVol.map((item) => (
           <div className="col-lg-4 col-md-6 mb-4 " onClick={(e)=>clickVol(e,item)}>
             <div className="card custom-card">

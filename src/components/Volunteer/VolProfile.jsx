@@ -35,9 +35,7 @@ const VolProfile = () => {
                         <p>licence : {voldata.licence}</p>
                     </div>
                     <div>
-                        <strong  style={{fontSize:'20px',fontWeight:"bold"}}>Location</strong>
-                        <img src="https://th.bing.com/th/id/OIP.120m6teR2_tGMfdTLz_G-AHaEK?w=321&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="" className='w-[500px] h-[200px]' />
-                        <p>Change Location</p>
+                        <strong  style={{fontSize:'20px',fontWeight:"bold"}}>Location : {voldata.address}</strong>
                         <div>
                             <span style={{fontSize:'20px',fontSize:'20px'}}>Contact</span>
                             <p><FontAwesomeIcon icon={faPhone} className='mr-2' /> Contact 1 : {voldata.contact1}</p>

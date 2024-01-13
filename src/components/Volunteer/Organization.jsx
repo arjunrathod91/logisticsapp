@@ -65,9 +65,9 @@ const Organization = () => {
             >
               About Organization{" "}
             </label>
-            <input
-              type="text"
+            <textarea
               name="aboutOrganization"
+              rows={5}
               className="border-b container"
               onChange={(e) => setAboutOrganization(e.target.value)}
             />

@@ -29,15 +29,16 @@ const Login = () => {
       setUserData(data.data)
       setSuccess(true)
         setTimeout(() => {
-          navigate('/userpage')
+          navigate('/verify')
         }, 3000)
     })
-    .catch(err=>console.log(err))
-    setFailed(true)
+    .catch(err=>{
+      console.log(err)
+      setFailed(true)
         setTimeout(() => {
           setFailed(false)
         }, 2000) 
-    navigate('/verify')
+    })
 
 
   }
