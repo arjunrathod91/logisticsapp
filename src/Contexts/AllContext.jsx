@@ -26,11 +26,12 @@ const MyContextProvider = ({ children }) => {
   const [loginEmail,setLoginEmail] = useState('')
   const [loginPassword,setLoginPassword] = useState('')
   const [userData,setUserData] = useState()
+  const [requestData,setRequestData] = useState()
 
 
 
   return (
-    <MyContext.Provider value={{ username, setUsername, email, setEmail, password, setPassword, confirmpassword, setConfirmPassword, organizationName, setOrganizationName,area,setArea, organizationHead, setOrganizationHead, aboutOrganization, setAboutOrganization, setNumberOfWorkers, numberOfWorkers, experience, setExperience, licence, setLicence, contact1, setContact1, contact2, setContact2, tollFreeNumber, setTollFreeNumber, address, setAddress,loginEmail,setLoginEmail,loginPassword,setLoginPassword,userData,setUserData,voldata,setVolData}}>
+    <MyContext.Provider value={{ username, setUsername, email, setEmail, password, setPassword, confirmpassword, setConfirmPassword, organizationName, setOrganizationName,area,setArea, organizationHead, setOrganizationHead, aboutOrganization, setAboutOrganization, setNumberOfWorkers, numberOfWorkers, experience, setExperience, licence, setLicence, contact1, setContact1, contact2, setContact2, tollFreeNumber, setTollFreeNumber, address, setAddress,loginEmail,setLoginEmail,loginPassword,setLoginPassword,userData,setUserData,voldata,setVolData,requestData,setRequestData}}>
       {children}
     </MyContext.Provider>
   );

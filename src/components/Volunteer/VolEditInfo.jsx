@@ -11,8 +11,8 @@ const VolEditInfo = () => {
 
   const { voldata, setVolData } = useContext(MyContext)
 
-  const { username, email, password, organizationName, organizationHead, whatYouProvide, aboutOrganization, numberOfWorkers, experience, licence, contact1, contact2, tollFreeNumber, address } = useContext(MyContext)
-  const { setUsername, setEmail, setPassword, setOrganizationName, setOrganizationHead, setWhatYouProvide, setAboutOrganization, setNumberOfWorkers, setExperience, setLicence, setContact1, setContact2, setTollFreeNumber, setAddress } = useContext(MyContext)
+  const { username, email, password, organizationName, organizationHead, area, aboutOrganization, numberOfWorkers, experience, licence, contact1, contact2, tollFreeNumber, address } = useContext(MyContext)
+  const { setUsername, setEmail, setPassword, setOrganizationName, setOrganizationHead, setArea, setAboutOrganization, setNumberOfWorkers, setExperience, setLicence, setContact1, setContact2, setTollFreeNumber, setAddress } = useContext(MyContext)
 
 
   const navigate = useNavigate()
@@ -43,10 +43,10 @@ const VolEditInfo = () => {
   return (
     <div className="d-flex container-fluid flex-column justify-content-center align-items-center">
       <div className={success ? 'alert alert-success w-[300px] text-center' : 'd-none'} role="alert">
-        <FontAwesomeIcon icon={faCircleCheck} className='mr-3' />Login Successfully
+        <FontAwesomeIcon icon={faCircleCheck} className='mr-3' />Information Saved
       </div>
       <div className={failed ? 'alert alert-danger w-[300px] text-center' : 'd-none'} role="alert">
-        <FontAwesomeIcon icon={faCircleXmark} className='mr-3' />Login Failed
+        <FontAwesomeIcon icon={faCircleXmark} className='mr-3' />Failed to Save
       </div>
       <div className="circle"></div>
       <strong>HelpYours !</strong>
@@ -116,19 +116,20 @@ const VolEditInfo = () => {
             />
           </div>
           <div className="d-flex flex-column mb-2">
-            <label
-              htmlFor="whatWeProvide"
+          <label
+              htmlFor="area"
               className=""
               style={{ fontSize: "19px" }}
             >
-              What We provide
+              What You Provide
             </label>
-            <input
-              type="text"
-              name="whatWeProvide"
-              className="border-b container"
-              onChange={(e) => setWhatYouProvide(e.target.value)}
-            />
+            <FormSelect onChange={(e)=>setArea(e.target.value)}>
+              <option value="">--Select--</option>
+              <option value="Ambulance">Ambulance</option>
+              <option value="Medicine">Medicene</option>
+              <option value="FirstAid">First Aid</option>
+              <option value="FireBus">Fire Bus</option>
+            </FormSelect>
           </div>
           <div className="d-flex flex-column mb-2">
             <label

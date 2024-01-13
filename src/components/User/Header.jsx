@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { Nav, NavItem } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -9,29 +9,13 @@ import {
   faEnvelope,
   faExclamationCircle,
   faBell,
+  faXmark,
 } from "@fortawesome/free-solid-svg-icons";
-
-const tabs = [
-  {
-    route: "/userpage",
-    icon: faHome,
-  },
-  {
-    route: "/userprofile",
-    icon: faExclamationCircle,
-  },
-
-  {
-    route: "/user-messages",
-    icon: faEnvelope,
-  },
-  {
-    route: "/userprofile",
-    icon: faUserCircle,
-  },
-];
+import { MyContext } from "../../Contexts/AllContext";
 
 const Header = (props) => {
+  const [notification, setNotification] = useState(false)
+  const { voldata, setVolData } = useContext(MyContext)
   return (
     <div className="pt-3">
       <div className="d-flex justify-content-around">
@@ -42,43 +26,34 @@ const Header = (props) => {
         <div>
           <h4 className='fw-bold'>HelpYours!</h4>
         </div>
-        <div>
+        <div onClick={() => setNotification(!notification)}>
           <FontAwesomeIcon
             icon={faBell}
             className="text-dark"
-            style={{ width: "25px",
+            style={{
+              width: "25px",
               height: "22.222px",
-              flexShrink: "0" }}
+              flexShrink: "0"
+            }}
           />
         </div>
       </div>
-
-      <nav
-        className="navbar fixed-bottom navbar-light d-block d-lg-none bottom-tab-nav"
-        role="navigation"
-      >
-        <Nav className="w-100">
-          <div className=" d-flex flex-row justify-content-around w-100">
-            {tabs.map((tab, index) => (
-              <NavItem key={`tab-${index}`}>
-                <NavLink
-                  to={tab.route}
-                  className="nav-link bottom-nav-link"
-                  activeClassName="active"
-                >
-                  <div className="row d-flex flex-column justify-content-center align-items-center">
-                    <FontAwesomeIcon
-                      size="lg"
-                      icon={tab.icon}
-                      style={{ color: "black" }}
-                    />
-                  </div>
-                </NavLink>
-              </NavItem>
-            ))}
+      <div className={notification ? 'w-[400px] p-2' : 'd-none'} style={{ position: 'absolute', top: '1%', right: '1%', borderRadius: '10px', backgroundColor: 'white' }}>
+        <div onClick={() => setNotification(!notification)}><FontAwesomeIcon icon={faXmark} /></div>
+        <p>Your Recent Request :</p>
+        <div className="card p-1 d-flex">
+        {voldata ?
+        <>
+            <div className="circle"></div>
+            <div className="">
+              <p className="mb-0"><sapn>Name :</sapn>{voldata.username}</p>
+              <p className="mb-0"><sapn>Area :</sapn>{voldata.area}</p>
+              <p className="mb-0"><sapn>Location :</sapn>{voldata.address}</p>
+            </div>
+        </>
+          : <p>You have 0 request</p>}
           </div>
-        </Nav>
-      </nav>
+      </div>
     </div>
   );
 };

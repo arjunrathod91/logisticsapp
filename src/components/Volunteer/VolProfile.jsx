@@ -8,39 +8,50 @@ import { MyContext } from '../../Contexts/AllContext'
 
 const VolProfile = () => {
 
-    const {voldata,setVolData} = useContext(MyContext)
+    const { voldata, setVolData } = useContext(MyContext)
 
-  return (
-    <div>
-        <VolHeader/>
-        <div className='container mt-12'>
+    return (
+        <div>
+            <VolHeader />
+            <div className='container mt-12 h-[150vh]'>
                 <div className='center-flex gap-5'>
                     <img src="https://th.bing.com/th?id=ORMS.d371f0730994d45f73252117479664bb&pid=Wdp&w=300&h=156&qlt=90&c=1&rs=1&dpr=1.25&p=0" alt="" className='w-[100px] h-[100px]' />
                     <div className='start-flex flex-col'>
                         <p>Name :{voldata.username}</p>
                         <p>Email: {voldata.email}</p>
-                        <p>Area : {voldata.whatYouProvide}</p>
+                        <p>Area : {voldata.area}</p>
                     </div>
                 </div>
                 <div className='container-fluid center-flex flex-col mt-10'>
-                    <div>
-                        <strong>About</strong>
+                    <div className='container-fluid'>
+                        <strong style={{fontSize:'20px',fontWeight:"bold"}}>About</strong>
                         <p>{voldata.aboutOrganization}</p>
                     </div>
-                    <div>
-                        <strong>Location</strong>
-                        <img src="https://th.bing.com/th/id/OIP.120m6teR2_tGMfdTLz_G-AHaEK?w=321&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="" className='w-[500px] h-[200px]'/>
-                        <p>Change Location</p>
-                        <p><FontAwesomeIcon icon={faPhone} className='mr-2'/> Contact 1 : {voldata.contact1}</p>
-                        <p><FontAwesomeIcon icon={faPhone} className='mr-2'/> Contact 2 : {voldata.contact2}</p>
-
-                        <Link to="/vol-editinfo"><button style={{backgroundColor:"teal",color:"white",borderRadius:"10px"}}>Edit Information</button></Link>
+                    <div className='container-fluid'>
+                        <span style={{fontSize:'20px',fontWeight:"bold"}}>Organization Detail</span>
+                        <p>Organization Head : {voldata.organizationHead}</p>
+                        <p>Number Of Workers : {voldata.numberOfWorkers}</p>
+                        <p>Experience : {voldata.experience}</p>
+                        <p>licence : {voldata.licence}</p>
                     </div>
-                    
+                    <div>
+                        <strong  style={{fontSize:'20px',fontWeight:"bold"}}>Location</strong>
+                        <img src="https://th.bing.com/th/id/OIP.120m6teR2_tGMfdTLz_G-AHaEK?w=321&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="" className='w-[500px] h-[200px]' />
+                        <p>Change Location</p>
+                        <div>
+                            <span style={{fontSize:'20px',fontSize:'20px'}}>Contact</span>
+                            <p><FontAwesomeIcon icon={faPhone} className='mr-2' /> Contact 1 : {voldata.contact1}</p>
+                            <p><FontAwesomeIcon icon={faPhone} className='mr-2' /> Contact 2 : {voldata.contact2}</p>
+                            <p>Toll Free Number : {voldata.tollFreeNumber}</p>
+                            <p>Email : {voldata.email}</p>
+                        </div>
+                        <Link to="/vol-editinfo"><button style={{ backgroundColor: "teal", color: "white", borderRadius: "10px" }}>Edit Information</button></Link>
+                    </div>
+
                 </div>
             </div>
-            </div>
-  )
+        </div>
+    )
 }
 
 export default VolProfile

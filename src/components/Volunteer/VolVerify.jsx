@@ -19,10 +19,16 @@ const VolVerify = () => {
   const ref = useRef();
   const formRef = useRef();
 
+  const { voldata, setVolData, username, email, password, confirmpassword, organizationName, organizationHead, aboutOrganization, area, numberOfWorkers, experience, licence, contact1, contact2, tollFreeNumber, address } = useContext(MyContext)
   const navigate = useNavigate()
-
   const sendEmail = (e) => {
     e.preventDefault();
+    axios.post('http://localhost:3002/setVol', { username, email, password, confirmpassword, organizationName, organizationHead, aboutOrganization, area, numberOfWorkers, experience, licence, contact1, contact2, tollFreeNumber, address})
+    .then(details => {
+      console.log(details.data)
+      setVolData(data.data)
+    })
+    .catch(err => console.log(err))
     setSubmitted(true)
     console.log(otp)
 
