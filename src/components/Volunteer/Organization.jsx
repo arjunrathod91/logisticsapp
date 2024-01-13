@@ -12,8 +12,7 @@ const Organization = () => {
 
   const { setOrganizationName, setOrganizationHead, setArea, setAboutOrganization, setNumberOfWorkers, setExperience, setLicence } = useContext(MyContext)
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = () => {
     nevigate('/volcontact')
 
   }
