@@ -50,9 +50,10 @@ function NearbyHelpers() {
                 </div>
               </div>
             </div>
-            </div>)}
+          </div>
+        ))}
+      </div>
     </div>
- </div>
   );
 }
 
