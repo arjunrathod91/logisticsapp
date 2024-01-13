@@ -112,12 +112,14 @@ app.post('/sendRequest',(req,res)=>{
 })
 
 app.get('/newRequest',(req,res)=>{
+  // const area = req.query
   Request.find()
   .then(vol=>res.json(vol))
   .catch(err=>res.json(err))
 })
 
 app.get('/nearbyVol',(req,res)=>{
+  // const help = req.query.
     Volunteer.find()
      .then(newVol => res.json(newVol))
      .catch(err => res.json(err))

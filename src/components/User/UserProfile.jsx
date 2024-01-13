@@ -17,8 +17,8 @@ const UserProfile = () => {
         <Header/>
         <div className='container mt-12'>
                 <div className='center-flex gap-5'>
-                    <img src="https://th.bing.com/th?id=ORMS.d371f0730994d45f73252117479664bb&pid=Wdp&w=300&h=156&qlt=90&c=1&rs=1&dpr=1.25&p=0" alt="" className='w-[100px] h-[100px]' />
-                    <div className='start-flex flex-col'>
+                    <img src="https://th.bing.com/th?id=ORMS.d371f0730994d45f73252117479664bb&pid=Wdp&w=300&h=156&qlt=90&c=1&rs=1&dpr=1.25&p=0" alt="" style={{borderRadius:'50%',height:'80px',width:'80px'}} />
+                    <div className='d-flex flex-col'>
                         <p>Name : {userData.username}</p>
                         <p>Email: {userData.email}</p>
                     </div>

@@ -1,21 +1,23 @@
 import { Link, useNavigate } from 'react-router-dom';
 import Header from './Header'
 import axios from 'axios';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { io } from 'socket.io-client';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleCheck, faCircleXmark } from '@fortawesome/free-solid-svg-icons';
+import { FormSelect } from 'react-bootstrap';
+import { MyContext } from '../../Contexts/AllContext';
 
 
 const UserEmergencyInfo = () => {
   const [success, setSuccess] = useState(false)
   const [failed, setFailed] = useState(false)
-
-  const [requestData, setRequestData] = useState()
   const [name, setName] = useState('')
   const [contact, setContact] = useState('')
   const [location, setLocation] = useState('')
   const [help, setHelp] = useState('')
+
+  const {requestData,setRequestData} = useContext(MyContext)
   // const socket = io('http://localhost:3002');
   const navigate = useNavigate()
 
@@ -24,6 +26,8 @@ const UserEmergencyInfo = () => {
       axios.post('http://localhost:3002/sendRequest', { name, contact, location, help })
         .then(data => {
           console.log(data.data)
+          setRequestData(data.data)
+          console.log(requestData)
           setSuccess(true)
           setTimeout(()=>{
             setSuccess(false)
@@ -74,16 +78,20 @@ const UserEmergencyInfo = () => {
           />
         </div>
         <div className='mb-2'>
-          <label htmlFor="text">What Help?</label>
-          <textarea
-            type="textarea"
-            id="help"
-            name="help"
-            placeholder='Write in brief'
-            className="form-control"
-            onChange={(e) => setHelp(e.target.value)}
-            required
-          />
+        <label
+              htmlFor="area"
+              className=""
+              style={{ fontSize: "19px" }}
+            >
+              What You Provide
+            </label>
+            <FormSelect onChange={(e)=>setHelp(e.target.value)} style={{width:'280px'}}>
+              <option value="">--Select--</option>
+              <option value="Ambulance">Ambulance</option>
+              <option value="Medicine">Medicene</option>
+              <option value="FirstAid">First Aid</option>
+              <option value="FireBus">Fire Bus</option>
+            </FormSelect>
         </div>
         <div>
           <label htmlFor="location">Location</label>

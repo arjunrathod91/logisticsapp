@@ -28,7 +28,7 @@ function App() {
 
   return (
     <MyContextProvider>
-    <div className=" App">
+    <div className=" App" style={{position:'relative'}}>
       <Routes>
        <Route exact path="/" element={<Hero />}/>
        <Route  path="/Chooseauth" element={<ChooseAuth />}/>
