@@ -100,7 +100,7 @@ const UserEmergencyInfo = () => {
             required
           />
         </div>
-        <button type='submit' className='submitbtn' style={{background-color:#26ABB4}}>Submit</button>
+        <button type='submit' className='submitbtn' style={{backgroundColor:'#26ABB4'}}>Submit</button>
 
       </form>
 
