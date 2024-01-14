@@ -21,7 +21,7 @@ const UserInfo = () => {
                 </div>
                 <div className='container-fluid center-flex flex-col mt-10'>
                     <div>
-                        <strong>{userData.location}</strong>
+                        <strong><span className='fw-bold'>Location :</span>{userData.location}</strong>
                     </div>
                     <div>
                         <p onClick={''}><FontAwesomeIcon icon={faPhone} className='mr-2'/> {userData.contact}</p>
