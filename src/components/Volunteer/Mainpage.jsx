@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import VolHeader from './VolHeader'
+import VolFooter from './VolFooter'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { MyContext } from '../../Contexts/AllContext'
@@ -54,7 +55,7 @@ const Mainpage = () => {
         </div>
         ))}
       </div>
-
+      <VolFooter/>
     </div>
   )
 }
