@@ -5,7 +5,7 @@ import { MyContext } from "../../Contexts/AllContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleCheck, faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 
-const Login = () => {
+const SignUp = () => {
 
   const [success, setSuccess] = useState(false)
   const [failed, setFailed] = useState(false)
@@ -131,4 +131,4 @@ const Login = () => {
 
 };
 
-export default Login;
+export default SignUp;
