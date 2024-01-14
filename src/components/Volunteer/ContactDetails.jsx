@@ -73,7 +73,6 @@ const ContactDetails = () => {
                   onChange={(e) => setAddress(e.target.value)}
                 />
               </div>
-              <button>use Current Location</button>
             </div>
             <button type="submit" className="container-fluid" style={{ backgroundColor: "#26ABB4", padding: '5px', width: "100px", fontSize: "18px",color:'white' }}>Submit</button>
 
