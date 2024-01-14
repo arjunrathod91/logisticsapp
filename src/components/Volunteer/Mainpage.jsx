@@ -45,7 +45,7 @@ const Mainpage = () => {
         {request.map((item)=>(
           <div className='request-box mt-1 d-flex' onClick={(e)=>userInfo(e,item)}>
           <div className='left w-[30%] h-[100%] center-flex' >
-            <img src="https://th.bing.com/th?id=ORMS.d371f0730994d45f73252117479664bb&pid=Wdp&w=300&h=156&qlt=90&c=1&rs=1&dpr=1.25&p=0" alt="" className='w-[60px] h-[60px]' style={{backgroundColor:"red",borderRadius:'50%'}}/>
+            <img src="https://th.bing.com/th?id=ORMS.d371f0730994d45f73252117479664bb&pid=Wdp&w=300&h=156&qlt=90&c=1&rs=1&dpr=1.25&p=0" alt="" className='w-[60px] h-[60px]' style={{borderRadius:'50%'}}/>
           </div>
           <div className='right w-[70%] h-[100%] flex-column'>
           <p><span className='fw-bold'>Name :</span> {item.name}</p>
