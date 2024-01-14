@@ -20,8 +20,8 @@ const UserInfo = () => {
                     </div>
                 </div>
                 <div className='container-fluid center-flex flex-col mt-10'>
-                        <strong><span className='fw-bold mt-3'>Location :</span>{userData.location}</strong>
-                        <p onClick={''}><FontAwesomeIcon icon={faPhone} className='mr-2 mt-3'/> {userData.contact}</p>
+                        <strong><span className='fw-bold mt-3 mb-3'>Location :</span>{userData.location}</strong>
+                        <p onClick={''}><FontAwesomeIcon icon={faPhone} className='mr-2'/> {userData.contact}</p>
                 </div>
             </div>
             <VolFooter/>
