@@ -4,7 +4,6 @@ import VolFooter from './VolFooter'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { MyContext } from '../../Contexts/AllContext'
-// import { io } from 'socket.io-client';
 
 const Mainpage = () => {
 
@@ -16,10 +15,8 @@ const Mainpage = () => {
   const userInfo=(e,item)=>{
     e.preventDefault()
     const userId = item._id
-    console.log(userId)
     axios.get(`http://localhost:3002/userDetail/${userId}`)
     .then(result=>{
-      console.log(result.data)
       setUserData(result.data)
       navigate('/user-info')
     })
@@ -28,7 +25,6 @@ const Mainpage = () => {
 
   useEffect(()=>{
     const area = voldata.area
-    console.log(area)
     axios.get('http://localhost:3002/newRequest',{
       params:{area}
     })
