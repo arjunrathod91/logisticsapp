@@ -11,17 +11,17 @@ const ChooseAuth = () => {
           <h4 className="fw-bold">HelpYours!</h4>
         </div>
         <div className="chooseauth d-flex flex-row gap-5 mt-5">
-          <div className="chooseuser d-flex justify-content-center align-item-center">
+          <div className="chooseuser d-flex justify-content-center align-item-center flex-col">
           <Link to="/login" ><FontAwesomeIcon icon={faUser} size="4x" style={{ color: 'gray' }}/></Link>
-           <p className="fw-bold">user</p>
+           <p className="fw-bold mt-1">user</p>
           </div>
-          <div className="choosevolunteer d-flex justify-content-center align-item-center">
+          <div className="choosevolunteer d-flex justify-content-center align-item-center flex-col">
          <Link to='/volregister'><FontAwesomeIcon icon={faHandHoldingHeart} size="4x" style={{ color: 'gray' }}/></Link>
-          <p className="fw-bold">volunteer</p>
+          <p className="fw-bold mt-1">volunteer</p>
           </div>
         </div>
         <div className="herobtnparent">
-            <button className="herobtn ">Choose mode</button>
+            <button className="herobtn ">Choose a mode</button>
         </div>
       </div>
     </>
