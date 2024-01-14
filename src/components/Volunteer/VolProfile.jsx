@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import VolHeader from './VolHeader'
+import VolFooter from './VolFooter'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPhone } from '@fortawesome/free-solid-svg-icons'
 import axios from 'axios'
@@ -48,6 +49,7 @@ const VolProfile = () => {
 
                 </div>
             </div>
+            <VolFooter/>
         </div>
     )
 }
