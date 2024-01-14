@@ -77,7 +77,6 @@ const VolLogin = () => {
         </div>
         <button type="submit" className="signupbtn fw-bold" style={{ backgroundColor: "#26ABB4", padding: '5px', width: "300px", fontSize: "18px",color:'white' }} >Log In</button>
       </form>
-      <p style={{ color: "rgb(19, 83, 83)" }}><Link>forgot password?</Link></p>
       <p style={{ color: "#48B09D", paddingTop: "10px" }}>Not Registered yet?<span ><Link to="/volregister">Sign Up</Link></span> </p>
     </div>
   );
