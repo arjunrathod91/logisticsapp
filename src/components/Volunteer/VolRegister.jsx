@@ -61,7 +61,7 @@ const VolRegister = () => {
               required
             />
           </div>
-          <button type="submit" className="submitbtn" style{{}}>Submit</button>
+          <button type="submit" className="submitbtn" style={{backgroundColor:'#26ABB4'}}>Submit</button>
        </form>
        <p style={{color:"#48B09D",marginTop:"10px"}}>Already have an account ?<span className="fw-bold"><Link style={{color: "#40C6AE"}} to="/vol-login">Log In</Link></span> </p>
       </div>
