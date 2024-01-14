@@ -36,8 +36,8 @@ const VolProfile = () => {
                         <p>licence : {voldata.licence}</p>
                     </div>
                     <div className='container-fluid gap-2'>
-                        <strong  style={{fontSize:'20px',fontWeight:"bold"}}>Location : {voldata.address}</strong>
-                        <div className='container-fluid gap-1'>
+                        <p><span  style={{fontSize:'20px',fontWeight:"bold"}}>Location :</span> {voldata.address}</p>
+                        <div className='container-fluid gap-2'>
                             <span style={{fontSize:'20px',fontSize:'20px'}}>Contact</span>
                             <p><FontAwesomeIcon icon={faPhone} className='mr-2' /> Contact 1 : {voldata.contact1}</p>
                             <p><FontAwesomeIcon icon={faPhone} className='mr-2' /> Contact 2 : {voldata.contact2}</p>
