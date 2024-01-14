@@ -11,19 +11,17 @@ const ChooseAuth = () => {
           <h4 className="fw-bold">HelpYours!</h4>
         </div>
         <div className="chooseauth d-flex flex-row gap-5 mt-5">
-          <div className="chooseuser">
+          <div className="chooseuser d-flex justify-content-center align-item-center">
           <Link to="/login" ><FontAwesomeIcon icon={faUser} size="4x" style={{ color: 'gray' }}/></Link>
            <p className="fw-bold">user</p>
           </div>
-          <div className="choosevolunteer">
+          <div className="choosevolunteer d-flex justify-content-center align-item-center">
          <Link to='/volregister'><FontAwesomeIcon icon={faHandHoldingHeart} size="4x" style={{ color: 'gray' }}/></Link>
           <p className="fw-bold">volunteer</p>
           </div>
         </div>
         <div className="herobtnparent">
-          <Link to="#">
             <button className="herobtn ">Choose mode</button>
-          </Link>
         </div>
       </div>
     </>
