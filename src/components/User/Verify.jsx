@@ -99,7 +99,7 @@ const Verify = () => {
                 name="email"
                 className="h-[35px] rounded-3 border border-secondary text-xl px-3"
               />
-              <button type="submit" className="verifybtn mt-2" style={{background-color:#26ABB4}}>Next</button>
+              <button type="submit" className="verifybtn mt-2" style={{backgroundColor:'#26ABB4'}}>Next</button>
             </form>
           </>
         }
