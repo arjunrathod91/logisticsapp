@@ -4,14 +4,12 @@ const mongoose = require("mongoose")
 const User = require('./Models/UserModel')
 const Volunteer = require('./Models/VolunteerModel')
 const Request = require('./Models/Request')
-const socketIo = require('socket.io');
 const http = require('http');
 const dotenv = require('dotenv');
 
 dotenv.config();
 const app = express()
 const server = http.createServer(app);
-const io = socketIo(server);
 app.use(express.json())
 app.use(cors())
 const port = process.env.PORT || 3002
@@ -157,43 +155,6 @@ app.put('/editVol/:userId', (req,res)=>{
       .then(data=>res.json(data))
       .catch(err=>res.json(err))
       })       
-        
-/*app.delete('/delUser/:userId',async (req,res)=>{
-    try {
-        const userId = req.params.userId;
-    
-        // Find and delete the user in MongoDB
-        await Volunteer.findByIdAndDelete(userId);
-    
-        res.status(200).json({ message: 'User deleted successfully' });
-      } catch (error) {
-        res.status(500).json({ error: 'Failed to delete user', details: error });
-      }
-    })
-    */
-        
-
-
-
-io.on('connection', (socket) => {
-    console.log('A user connected');
-
-    socket.on('userData', (data) => {
-        // Broadcast the received data to all connected clients except the sender
-        socket.broadcast.emit('broadcastData', data);
-      });
-  
-    socket.on('disconnect', () => {
-      console.log('A user disconnected');
-    });
-  
-    // Add more socket event listeners here as needed
-  });
-
-//post create(req.body) //creates a new data //not need to make a collection it creates automatic
-//update findOneAndUodate req.params.userId //for id of data req.body data we provided
-//delete findOneAndDelete req.params.userId //for id of data req.body data we provided
-//get    find 
 
 
 app.listen(port,()=>{
