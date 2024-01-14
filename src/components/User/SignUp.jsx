@@ -25,7 +25,6 @@ const Login = () => {
     e.preventDefault()
     axios.post('http://localhost:3002/newUser',{username,email,password,confirmpassword,location,contact})
     .then(data=>{
-      console.log(data.data)
       setUserData(data.data)
       setSuccess(true)
         setTimeout(() => {
@@ -33,7 +32,6 @@ const Login = () => {
         }, 3000)
     })
     .catch(err=>{
-      console.log(err)
       setFailed(true)
         setTimeout(() => {
           setFailed(false)
@@ -123,7 +121,7 @@ const Login = () => {
             />
           </div>
 
-       <button type="submit" className="signupbtn fw-bold" >Sign Up</button>
+       <button type="submit" className="signupbtn fw-bold" style={{background-color:#26ABB4}} >Sign Up</button>
       </form>
       <p style={{color:"#48B09D",marginTop:"10px"}}>Already have an account ?<span className="fw-bold"><Link style={{color: "#40C6AE"}} to="/login">Log In</Link></span> </p>
 
