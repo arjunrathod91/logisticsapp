@@ -20,7 +20,6 @@ const VolLogin = () => {
       params: { email, password }
     })
       .then((response) => {
-        console.log(response.data);
         setVolData(response.data);
         setSuccess(true)
         setTimeout(() => {
@@ -28,7 +27,6 @@ const VolLogin = () => {
         }, 3000)
       })
       .catch((error) => {
-        console.error('Error fetching user:', error);
         setFailed(true)
         setTimeout(() => {
           setFailed(false)
