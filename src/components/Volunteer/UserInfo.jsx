@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-
+import VolFooter from './VolFooter'
 import VolHeader from './VolHeader'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faPhone} from '@fortawesome/free-solid-svg-icons'
@@ -29,6 +29,7 @@ const UserInfo = () => {
                     
                 </div>
             </div>
+            <VolFooter/>
         </div>
     )
 }
