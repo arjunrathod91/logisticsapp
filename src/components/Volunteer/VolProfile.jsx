@@ -28,16 +28,16 @@ const VolProfile = () => {
                         <strong style={{fontSize:'20px',fontWeight:"bold"}}>About</strong>
                         <p>{voldata.aboutOrganization}</p>
                     </div>
-                    <div className='container-fluid'>
+                    <div className='container-fluid gap-1'>
                         <span style={{fontSize:'20px',fontWeight:"bold"}}>Organization Detail</span>
                         <p>Organization Head : {voldata.organizationHead}</p>
                         <p>Number Of Workers : {voldata.numberOfWorkers}</p>
                         <p>Experience : {voldata.experience}</p>
                         <p>licence : {voldata.licence}</p>
                     </div>
-                    <div>
+                    <div className='container-fluid gap-2'>
                         <strong  style={{fontSize:'20px',fontWeight:"bold"}}>Location : {voldata.address}</strong>
-                        <div>
+                        <div className='container-fluid gap-1'>
                             <span style={{fontSize:'20px',fontSize:'20px'}}>Contact</span>
                             <p><FontAwesomeIcon icon={faPhone} className='mr-2' /> Contact 1 : {voldata.contact1}</p>
                             <p><FontAwesomeIcon icon={faPhone} className='mr-2' /> Contact 2 : {voldata.contact2}</p>
