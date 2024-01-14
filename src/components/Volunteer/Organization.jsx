@@ -13,8 +13,7 @@ const Organization = () => {
 
   const { setOrganizationName, setOrganizationHead, setArea, setAboutOrganization, setNumberOfWorkers, setExperience, setLicence } = useContext(MyContext)
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = () => {
     nevigate('/volcontact')
 
   }
@@ -44,7 +43,6 @@ const Organization = () => {
           <div className="d-flex flex-column mb-2">
             <label
               htmlFor="area"
-              className=""
               style={{ fontSize: "19px" }}
             >
               What You Provide
@@ -60,7 +58,6 @@ const Organization = () => {
           <div className="d-flex flex-column mb-2">
             <label
               htmlFor="aboutOrganiztion"
-              className=""
               style={{ fontSize: "19px" }}
             >
               About Organization{" "}
@@ -75,7 +72,6 @@ const Organization = () => {
           <div className="d-flex flex-column mb-2">
             <label
               htmlFor="organizationHead"
-              className=""
               style={{ fontSize: "19px" }}
             >
               Organization Head{" "}
@@ -90,7 +86,6 @@ const Organization = () => {
           <div className="d-flex flex-column mb-2">
             <label
               htmlFor="numberOfWorkers"
-              className=""
               style={{ fontSize: "19px" }}
             >
               Number of Workers{" "}
@@ -105,7 +100,6 @@ const Organization = () => {
           <div className="d-flex flex-column mb-2">
             <label
               htmlFor="experience"
-              className=""
               style={{ fontSize: "19px" }}
             >
               Experiance{" "}
@@ -120,7 +114,6 @@ const Organization = () => {
           <div className="d-flex flex-column mb-2">
             <label
               htmlFor="licence"
-              className=""
               style={{ fontSize: "19px" }}
             >
               Licence Id{" "}
