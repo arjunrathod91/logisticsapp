@@ -19,7 +19,6 @@ const Login = () => {
       params: { email, password }
     })
       .then((response) => {
-        console.log(response.data);
         setUserData(response.data)
         setSuccess(true)
         setTimeout(() => {
@@ -27,7 +26,6 @@ const Login = () => {
         }, 3000)
       })
       .catch((error) => {
-        console.error('Error fetching user:', error);
           setFailed(true)
         setTimeout(() => {
           setFailed(false)
