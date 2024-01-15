@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
-import Header from './Header'
-import Footer from './Footer'
+import Header from '../User/Header'
+import Footer from '../User/Footer'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPhone } from '@fortawesome/free-solid-svg-icons'
 import axios from 'axios'
