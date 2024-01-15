@@ -40,7 +40,7 @@ function NearbyHelpers() {
       <Header />
       <h4>Nearby Helpers</h4>
       <div className="row container-fluid">
-        {nearbyVol.map((item) => (
+        {nearbyVol ? nearbyVol.map((item) => (
           <div className="col-lg-4 col-md-6 mb-4 " onClick={(e)=>clickVol(e,item)}>
             <div className="card custom-card">
               <div className="card-body bg-secondary d-flex gap-5" style={{ backgroundColor: "#D9D9D9" }}>
@@ -53,7 +53,7 @@ function NearbyHelpers() {
               </div>
             </div>
           </div>
-        ))}
+        )) : ''}
       </div>
     </div>
   );
