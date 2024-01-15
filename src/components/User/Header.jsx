@@ -1,15 +1,7 @@
 import React, { useContext, useState } from "react";
-import { Nav, NavItem } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faSearch,
-  faHome,
-  faUserCircle,
-  faEnvelope,
-  faExclamationCircle,
   faBell,
-  faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import { MyContext } from "../../Contexts/AllContext";
 
