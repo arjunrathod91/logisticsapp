@@ -24,7 +24,8 @@ const VolunteerProfile = () => {
   return (
     <div className="container">
       <Header />
-      { voldata ? <div className={success ? 'alert alert-success w-[300px] text-center container-fluid' : 'd-none'} role="alert">
+      { voldata ? <> 
+        <div className={success ? 'alert alert-success w-[300px] text-center container-fluid' : 'd-none'} role="alert">
             <FontAwesomeIcon icon={faCircleCheck} className='mr-3' />Request Sent SuccessFully
           </div>
           <div className={failed ? 'alert alert-danger w-[300px] text-center container-fluid' : 'd-none'} role="alert">
@@ -70,7 +71,8 @@ const VolunteerProfile = () => {
         </div>
 
       </div>
-      <button className="volbtn container-fluid" style={{ color: "white" }} onClick={submit}>Ask For Help</button> : '' }
+      <button className="volbtn container-fluid" style={{ color: "white" }} onClick={submit}>Ask For Help</button>
+        </>: '' }
   <Footer/>
     </div>
   );
