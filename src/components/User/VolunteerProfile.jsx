@@ -24,7 +24,9 @@ const VolunteerProfile = () => {
   return (
     <div className="container">
       <Header />
-      {voldata ? <> <div className={success ? 'alert alert-success w-[300px] text-center container-fluid' : 'd-none'} role="alert">
+      {voldata ? 
+      <>
+        <div className={success ? 'alert alert-success w-[300px] text-center container-fluid' : 'd-none'} role="alert">
             <FontAwesomeIcon icon={faCircleCheck} className='mr-3' />Request Sent SuccessFully
           </div>
           <div className={failed ? 'alert alert-danger w-[300px] text-center container-fluid' : 'd-none'} role="alert">
@@ -60,14 +62,7 @@ const VolunteerProfile = () => {
         <div className="col-sm-12 ">
           <h6 className="fw-bold">Location Address</h6>
           {voldata.address}
-          <img src="https://th.bing.com/th/id/OIP.120m6teR2_tGMfdTLz_G-AHaEK?w=321&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="" className='w-[500px] h-[200px]' />
         </div>
-        {/* <div>
-          Organization Detail :
-          <p>Number of Workers : {voldata.numberOfWorkers}</p>
-          <p>Experience : {voldata.experience}</p>
-          <p>Licence : {voldata.licence}</p>
-        </div> */}
         <div>
             <h6 className="fw-bold">Location</h6>
            <img src="https://th.bing.com/th/id/OIP.120m6teR2_tGMfdTLz_G-AHaEK?w=321&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="" className='map_img'/>
@@ -80,7 +75,8 @@ const VolunteerProfile = () => {
           <p>Email : {voldata.email}</p>
         </div>
         <button className="volbtn container-fluid" style={{ color: "white" }} onClick={submit}>Ask For Help</button>
-      </div> ></> : ''}
+      </div>
+      </> : ''}
       <VolFooter/>
     </div>
   );
