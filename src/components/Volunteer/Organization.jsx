@@ -2,21 +2,15 @@ import React, { useContext, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleArrowRight } from "@fortawesome/free-solid-svg-icons";
 
-import { Link, useNavigate } from "react-router-dom";
+import { Link} from "react-router-dom";
 import { MyContext } from "../../Contexts/AllContext";
 import { FormSelect } from "react-bootstrap";
 
 const Organization = () => {
 
-  const nevigate = useNavigate()
-
   const { setOrganizationName, setOrganizationHead, setArea, setAboutOrganization, setNumberOfWorkers, setExperience, setLicence } = useContext(MyContext)
 
-  const nevigate = useNavigate();
 
-  const handleSubmit = () => {
-    nevigate("/volcontact");
-  };
   return (
     <div className="d-flex container  vh-100 flex-column justify-content-center align-items-center">
       <div className="circle"></div>
