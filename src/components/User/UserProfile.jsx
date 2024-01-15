@@ -1,16 +1,12 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext} from 'react'
 import Header from '../User/Header'
 import Footer from '../User/Footer'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPhone } from '@fortawesome/free-solid-svg-icons'
-import axios from 'axios'
 import { Link } from 'react-router-dom'
 import { MyContext } from '../../Contexts/AllContext'
 
 const UserProfile = () => {
-
-    const {loginData,setLoginData} = useContext(MyContext)
-    const [profile,setProfile] = useState([])
     const {userData,setUserData} = useContext(MyContext)
 
   return (
