@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import Header from "./Header";
+import Footer from "./Header";
 import { useContext, useState } from "react";
 import { MyContext } from "../../Contexts/AllContext";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -23,7 +24,7 @@ const VolunteerProfile = () => {
   return (
     <div className="container">
       <Header />
-      <div className={success ? 'alert alert-success w-[300px] text-center container-fluid' : 'd-none'} role="alert">
+      {voldata ? <div className={success ? 'alert alert-success w-[300px] text-center container-fluid' : 'd-none'} role="alert">
             <FontAwesomeIcon icon={faCircleCheck} className='mr-3' />Request Sent SuccessFully
           </div>
           <div className={failed ? 'alert alert-danger w-[300px] text-center container-fluid' : 'd-none'} role="alert">
@@ -79,7 +80,8 @@ const VolunteerProfile = () => {
           <p>Email : {voldata.email}</p>
         </div>
         <button className="volbtn container-fluid" style={{ color: "white" }} onClick={submit}>Ask For Help</button>
-      </div>
+      </div> : ''}
+      <VolFooter/>
     </div>
   );
 };
