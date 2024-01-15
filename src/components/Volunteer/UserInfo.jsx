@@ -11,7 +11,7 @@ const UserInfo = () => {
     return (
         <div>
             <VolHeader />
-            <div className='container mt-12'>
+            { userData ? <div className='container mt-12'>
                 <div className='center-flex gap-5'>
                     <img src="https://th.bing.com/th?id=ORMS.d371f0730994d45f73252117479664bb&pid=Wdp&w=300&h=156&qlt=90&c=1&rs=1&dpr=1.25&p=0" alt="" className='w-[100px] h-[100px]' />
                     <div className='start-flex flex-col'>
@@ -23,7 +23,7 @@ const UserInfo = () => {
                         <strong><span className='fw-bold mt-3 mb-3'>Location :</span>{userData.location}</strong>
                         <p onClick={''}><FontAwesomeIcon icon={faPhone} className='mr-2'/> {userData.contact}</p>
                 </div>
-            </div>
+            </div> : ''}
             <VolFooter/>
         </div>
     )
