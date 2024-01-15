@@ -10,37 +10,23 @@ const UserInfo = () => {
     return (
         <div>
             <VolHeader />
-            <div className='container mt-12'>
+            {userData ? <div className='container mt-12'>
                 <div className='center-flex gap-5'>
                     <img src="https://th.bing.com/th?id=ORMS.d371f0730994d45f73252117479664bb&pid=Wdp&w=300&h=156&qlt=90&c=1&rs=1&dpr=1.25&p=0" alt="" className=' userinfo-img' />
                     <div className='start-flex flex-col'>
                         <p>Name : {userData.username}</p>+
-                        <p>Email: {userData.email}</p>
-                        <p>Ask for : {userData.area}</p>
+                        <p>Ask for : {userData.help}</p>
                     </div>
                 </div>
                 <div className='container-fluid center-flex flex-col mt-3'>
-                    <div className='container-fluid'>
-                        <strong>About</strong>
-                        <p>{userData.brief}</p>
-                    </div>
-                    <div>
-                        <strong>Media</strong>
-                        <img src={userData.img} alt="" />
-                    </div>
-                    <div>
-                        <strong>{userData.location}</strong>
-                        <img src="https://th.bing.com/th/id/OIP.120m6teR2_tGMfdTLz_G-AHaEK?w=321&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="" className='w-[500px] h-[200px]'/>
-                        <strong>Location</strong>
-                        <img src="https://th.bing.com/th/id/OIP.120m6teR2_tGMfdTLz_G-AHaEK?w=321&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="" className=' map_img'/>
-                        <p>Open in map</p>
-                    </div>
+                        <strong>Location :</strong> {userData.location}
                     <div>
                         <p onClick={''}><FontAwesomeIcon icon={faPhone} className='mr-2'/> {userData.contact}</p>
                     </div>
                     
                 </div>
-            </div>
+            </div> : ''}
+                <VolFooter/>
         </div>
     )
 }
