@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import Header from "./Header";
+import Footer from "./Footer";
 import { useContext, useState } from "react";
 import { MyContext } from "../../Contexts/AllContext";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -23,7 +24,7 @@ const VolunteerProfile = () => {
   return (
     <div className="container">
       <Header />
-      <div className={success ? 'alert alert-success w-[300px] text-center container-fluid' : 'd-none'} role="alert">
+      { voldata ? <div className={success ? 'alert alert-success w-[300px] text-center container-fluid' : 'd-none'} role="alert">
             <FontAwesomeIcon icon={faCircleCheck} className='mr-3' />Request Sent SuccessFully
           </div>
           <div className={failed ? 'alert alert-danger w-[300px] text-center container-fluid' : 'd-none'} role="alert">
@@ -60,12 +61,6 @@ const VolunteerProfile = () => {
           <h6 className="fw-bold">Location Address</h6>
           {voldata.address}
         </div>
-        {/* <div>
-          Organization Detail :
-          <p>Number of Workers : {voldata.numberOfWorkers}</p>
-          <p>Experience : {voldata.experience}</p>
-          <p>Licence : {voldata.licence}</p>
-        </div> */}
         <div>
           <strong>Contact</strong>
           <p>Contact 1 : {voldata.contact1}</p>
@@ -75,7 +70,8 @@ const VolunteerProfile = () => {
         </div>
 
       </div>
-      <button className="volbtn container-fluid" style={{ color: "white" }} onClick={submit}>Ask For Help</button>
+      <button className="volbtn container-fluid" style={{ color: "white" }} onClick={submit}>Ask For Help</button> : '' }
+  <Footer/>
     </div>
   );
 };
