@@ -4,7 +4,6 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faHandHoldingHeart } from '@fortawesome/free-solid-svg-icons';
 const ChooseAuth = () => {
   return (
-    <>
       <div className=" d-flex flex-column justify-content-center align-items-center pt-5 " >
       <div className="circle"></div>
         <div className="text-center">
@@ -24,7 +23,6 @@ const ChooseAuth = () => {
             <button className="herobtn ">Choose mode</button>
         </div>
       </div>
-    </>
   );
 };
 
