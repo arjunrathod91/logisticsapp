@@ -1,10 +1,11 @@
 import {Link} from 'react-router-dom'
+import logo from '../../assets/logo.png'
 
 const Hero = () => {
     return(
          <>
            <div className ='container d-flex flex-column justify-content-center align-items-center' style={{paddingTop:"100px"}}>
-               <div className="circle"></div>
+                <img src={logo} className="circle" />
                <div className="text-center">
                  <h4 className="fw-bold">HelpYours!</h4>
                   <p className="heroparagraph">Your help is our priority</p>
