@@ -3,11 +3,8 @@ import { Nav, NavItem } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faSearch,
   faHome,
   faUserCircle,
-  faEnvelope,
-  faExclamationCircle,
   faBell,
 } from "@fortawesome/free-solid-svg-icons";
 
