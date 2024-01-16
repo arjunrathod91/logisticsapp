@@ -7,7 +7,7 @@ const ChooseAuth = () => {
   return (
     <>
       <div className=" d-flex flex-column justify-content-center align-items-center pt-5 " >
-      import logo from '../assets/logo.png'
+      <img src={logo} className="circle" />
         <div className="text-center">
           <h4 className="fw-bold">HelpYours!</h4>
         </div>
