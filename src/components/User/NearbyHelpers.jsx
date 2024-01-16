@@ -1,6 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom';
 import Header from './Header'
-import Footer from './Footer'
 import axios from 'axios';
 import { useContext, useEffect, useState } from 'react';
 import { MyContext } from '../../Contexts/AllContext';
@@ -11,8 +10,10 @@ function NearbyHelpers() {
   const [nearbyVol, setNearbyVol] = useState([])
   const navigate = useNavigate()
   useEffect(() => {
-    // const help = requestData.help
-    axios.get('http://localhost:3002/nearbyVol')
+    const help = requestData.help
+    axios.get('http://localhost:3002/nearbyVol',{
+      params:{help}
+    })
       .then((data) => {
         setNearbyVol(data.data)
       })
@@ -38,8 +39,8 @@ function NearbyHelpers() {
     <div className="container">
       <Header />
       <h4>Nearby Helpers</h4>
-      <div className="row">
-        { nearbyVol ? nearbyVol.map((item) => (
+      <div className="row container-fluid">
+        {nearbyVol ? nearbyVol.map((item) => (
           <div className="col-lg-4 col-md-6 mb-4 " onClick={(e)=>clickVol(e,item)}>
             <div className="card custom-card">
               <div className="card-body bg-secondary d-flex gap-5" style={{ backgroundColor: "#D9D9D9" }}>
@@ -54,7 +55,6 @@ function NearbyHelpers() {
           </div>
         )) : ''}
       </div>
-      <Footer/>
     </div>
   );
 }
