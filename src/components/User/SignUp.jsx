@@ -5,7 +5,7 @@ import { MyContext } from "../../Contexts/AllContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleCheck, faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 
-const Login = () => {
+const SignUp = () => {
 
   const [success, setSuccess] = useState(false)
   const [failed, setFailed] = useState(false)
@@ -25,19 +25,18 @@ const Login = () => {
     e.preventDefault()
     axios.post('http://localhost:3002/newUser',{username,email,password,confirmpassword,location,contact})
     .then(data=>{
-      console.log(data.data)
       setUserData(data.data)
       setSuccess(true)
         setTimeout(() => {
-          navigate('/userpage')
+          navigate('/verify')
         }, 3000)
     })
-    .catch(err=>console.log(err))
-    setFailed(true)
+    .catch(err=>{
+      setFailed(true)
         setTimeout(() => {
           setFailed(false)
         }, 2000) 
-    navigate('/verify')
+    })
 
 
   }
@@ -122,7 +121,7 @@ const Login = () => {
             />
           </div>
 
-       <button type="submit" className="signupbtn fw-bold" >Sign Up</button>
+       <button type="submit" className="signupbtn fw-bold" style={{backgroundColor:'#26ABB4'}} >Sign Up</button>
       </form>
       <p style={{color:"#48B09D",marginTop:"10px"}}>Already have an account ?<span className="fw-bold"><Link style={{color: "#40C6AE"}} to="/login">Log In</Link></span> </p>
 
@@ -132,4 +131,4 @@ const Login = () => {
 
 };
 
-export default Login;
+export default SignUp;
