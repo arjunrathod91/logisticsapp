@@ -2,51 +2,14 @@ import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { MyContext } from "../../Contexts/AllContext";
-import io from 'socket.io-client';
 
 const VolRegister = () => {
-  const {setUsername,setEmail,setPassword,setConfirmPassword} = useContext(MyContext)
+    const {setUsername,setEmail,setPassword,setConfirmPassword} = useContext(MyContext)
     const navigate = useNavigate()
     
-
-  const submitData=(e)=>{
-    e.preventDefault();
+  const submitData=()=>{
     navigate("/volorganization")
   }
-
-  // useEffect(() => {
-  //   const socket = io('http://localhost:3002'); // Replace with your backend URL
-  //   // Socket events
-  //   socket.on('connect', () => {
-  //     console.log('Connected to server');
-  //   });
-
-  //   socket.on('disconnect', () => {
-  //     console.log('Disconnected from server');
-  //   });
-
-  //   // Add more socket event listeners as needed
-
-  //   // Clean up socket connection on unmount
-  //   return () => {
-  //     socket.disconnect();
-  //   };
-  // }, []);
-
-  // useEffect(()=>{]
-
-  //   axios.get('http://localhost:3002/getVol')
-  //   .then(detail=>console.log(detail))
-  //   .catch(err=>console.log(err))
-  // },[])
-  const update=async (e)=>{
-    
-
-  }
-
-
-
-  
   return (
     <>
       <div  className="vol-reg container d-flex flex-column justify-content-center align-items-center pt-3">
@@ -65,7 +28,7 @@ const VolRegister = () => {
           name="username"
           className="form-control"
           onChange={(e)=>setUsername(e.target.value)}
-          // required
+          required
         />
       </div>
           <div>
@@ -75,7 +38,7 @@ const VolRegister = () => {
               name="email"
               onChange={(e)=>setEmail(e.target.value)}
               className="form-control"
-              // required
+              required
             />
           </div>
           <div>
@@ -85,7 +48,7 @@ const VolRegister = () => {
               name="password"
               onChange={(e)=>setPassword(e.target.value)}
               className="form-control"
-              // required
+              required
             />
           </div>
           <div>
@@ -95,14 +58,10 @@ const VolRegister = () => {
               name="confirmpassword"
               onChange={(e)=>setConfirmPassword(e.target.value)}
               className="form-control"
-              // required
+              required
             />
           </div>
-          {/* <div>
-            <label htmlFor="image"> Profile Picture</label>
-            <input type="file" placeholder="Choose a file" onChange={(e)=>setProfile(e.target.value)}/>
-          </div> */}
-          <button type="submit" className="submitbtn">Submit</button>
+          <button type="submit" className="submitbtn" style={{backgroundColor:"#26ABB4"}}>Submit</button>
        </form>
        <p style={{color:"#48B09D",marginTop:"10px"}}>Already have an account ?<span className="fw-bold"><Link style={{color: "#40C6AE"}} to="/vol-login">Log In</Link></span> </p>
       </div>
