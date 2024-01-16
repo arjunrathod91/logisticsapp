@@ -7,7 +7,7 @@ const ChooseAuth = () => {
   return (
     <>
       <div className=" d-flex flex-column justify-content-center align-items-center pt-5 " >
-        <img src={logo} alt="" className='circle'/>
+      import logo from '../assets/logo.png'
         <div className="text-center">
           <h4 className="fw-bold">HelpYours!</h4>
         </div>
@@ -22,9 +22,7 @@ const ChooseAuth = () => {
           </div>
         </div>
         <div className="herobtnparent">
-          <Link to="#">
             <button className="herobtn ">Choose mode</button>
-          </Link>
         </div>
       </div>
     </>
