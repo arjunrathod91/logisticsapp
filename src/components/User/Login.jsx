@@ -19,7 +19,6 @@ const Login = () => {
       params: { email, password }
     })
       .then((response) => {
-        console.log(response.data);
         setUserData(response.data)
         setSuccess(true)
         setTimeout(() => {
@@ -27,7 +26,6 @@ const Login = () => {
         }, 3000)
       })
       .catch((error) => {
-        console.error('Error fetching user:', error);
           setFailed(true)
         setTimeout(() => {
           setFailed(false)
@@ -73,7 +71,7 @@ const Login = () => {
             required
           />
         </div>
-        <button type="submit" className="signupbtn fw-bold  " >Log In</button>
+        <button type="submit" className="signupbtn fw-bold  " style={{backgroundColor:"#26ABB4"}}>Log In</button>
       </form>
       <p style={{ color: "rgb(19, 83, 83)" }}><Link>forgot password?</Link></p>
       <p style={{ color: "#48B09D", paddingTop: "10px" }}>Not Registered yet?<span ><Link to="/signupasuser">Sign Up</Link></span> </p>
