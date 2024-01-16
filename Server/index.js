@@ -5,16 +5,14 @@ const User = require('./Models/UserModel')
 const Volunteer = require('./Models/VolunteerModel')
 const Request = require('./Models/Request')
 const http = require('http');
-const dotenv = require('dotenv');
-
-dotenv.config();
+const dotenv = require('dotenv').config();
 const app = express()
 const server = http.createServer(app);
 app.use(express.json())
 app.use(cors())
-const port = process.env.PORT || 3002
+const port = process.env.PORT || 3432
 
-mongoose.connect("mongodb://127.0.0.1:27017/Logistics")
+mongoose.connect(process.env.MONGO_URL)
 
 app.post('/newUser',(req,res)=>{
   User.create(req.body)
