@@ -7,31 +7,9 @@ const ContactDetails = () => {
   const { setContact1, setContact2, setTollFreeNumber, setAddress } = useContext(MyContext)
   const nevigate = useNavigate()
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = () => {
     nevigate('/volvarify')
-
   }
-  // const showPosition = (position) => {
-  //   const userLatitude = position.coords.latitude;
-  //   const userLongitude = position.coords.longitude;
-  //   setLatitude(userLatitude)
-  //   setLongitude(userLongitude)
-  //   console.log(latitude)
-  //   console.log(longitude)
-
-  // };
-  // const getLocation = () => {
-  //   if (navigator.geolocation) {
-  //     navigator.geolocation.getCurrentPosition(showPosition, ()=>console.log('error'));
-  //   } else {
-  //     console.log("Geolocation is not supported by this browser");
-  //   }
-
-  // };
-  // const handleLocation=()=>{
-  //   getLocation()
-  // }
 
   return (
     <>
@@ -59,7 +37,6 @@ const ContactDetails = () => {
               <div className="d-flex flex-column mb-2">
                 <label
                   htmlFor="contact2"
-                  className=""
                   style={{ fontSize: "19px" }}
                 >
                   Contact no: 2
@@ -71,7 +48,6 @@ const ContactDetails = () => {
               <div className="d-flex flex-column mb-2">
                 <label
                   htmlFor="tollFreeNumber"
-                  className=""
                   style={{ fontSize: "19px" }}
                 >
                   Toll Free Number
@@ -86,7 +62,6 @@ const ContactDetails = () => {
               <div className="d-flex flex-column mb-2">
                 <label
                   htmlFor="address"
-                  className=""
                   style={{ fontSize: "19px" }}
                 >
                   Address
@@ -98,9 +73,8 @@ const ContactDetails = () => {
                   onChange={(e) => setAddress(e.target.value)}
                 />
               </div>
-              <button>use Current Location</button>
             </div>
-            <button type="submit" className="container-fluid" style={{ backgroundColor: "#26ABB4", padding: '5px', width: "100px", fontSize: "18px" }}>Submit</button>
+            <button type="submit" className="container-fluid" style={{ backgroundColor: "#26ABB4", padding: '5px', width: "100px", fontSize: "18px",color:'white' }}>Submit</button>
 
           </form>
         </div>
