@@ -2,12 +2,11 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faHandHoldingHeart } from '@fortawesome/free-solid-svg-icons';
-import logo from '../../assets/logo.png'
 const ChooseAuth = () => {
   return (
     <>
       <div className=" d-flex flex-column justify-content-center align-items-center pt-5 " >
-      <img src={logo} className="circle" />
+      <div className="circle"></div>
         <div className="text-center">
           <h4 className="fw-bold">HelpYours!</h4>
         </div>
