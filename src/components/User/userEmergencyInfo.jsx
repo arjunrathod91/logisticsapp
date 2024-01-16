@@ -18,16 +18,13 @@ const UserEmergencyInfo = () => {
   const [help, setHelp] = useState('')
 
   const {requestData,setRequestData} = useContext(MyContext)
-  // const socket = io('http://localhost:3002');
   const navigate = useNavigate()
 
   const sendData = (e) => {
     e.preventDefault()
       axios.post('http://localhost:3002/sendRequest', { name, contact, location, help })
         .then(data => {
-          console.log(data.data)
           setRequestData(data.data)
-          console.log(requestData)
           setSuccess(true)
           setTimeout(()=>{
             setSuccess(false)
@@ -36,7 +33,6 @@ const UserEmergencyInfo = () => {
           
         })
         .catch(err => {
-          console.log(err)
           setFailed(true)
           setTimeout(()=>{
             setFailed(false)
@@ -83,7 +79,7 @@ const UserEmergencyInfo = () => {
               className=""
               style={{ fontSize: "19px" }}
             >
-              What You Provide
+              What Do You Want
             </label>
             <FormSelect onChange={(e)=>setHelp(e.target.value)} style={{width:'280px'}}>
               <option value="">--Select--</option>
@@ -104,8 +100,7 @@ const UserEmergencyInfo = () => {
             required
           />
         </div>
-        <p>use current location</p>
-        <button type='submit' className='submitbtn'>Submit</button>
+        <button type='submit' className='submitbtn' style={{backgroundColor:'#26ABB4'}}>Submit</button>
 
       </form>
 
