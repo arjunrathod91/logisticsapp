@@ -18,7 +18,7 @@ const VolFooter = () => {
           icon: faHome,
         },
         {
-          route: "volprofile",
+          route: "/volprofile",
           icon: faUserCircle,
         },
       ];
