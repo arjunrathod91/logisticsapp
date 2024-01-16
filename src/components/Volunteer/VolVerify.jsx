@@ -25,13 +25,10 @@ const VolVerify = () => {
     e.preventDefault();
     axios.post('http://localhost:3002/setVol', { username, email, password, confirmpassword, organizationName, organizationHead, aboutOrganization, area, numberOfWorkers, experience, licence, contact1, contact2, tollFreeNumber, address})
     .then(details => {
-      console.log(details.data)
-      setVolData(data.data)
+      setVolData(details.data)
     })
     .catch(err => console.log(err))
     setSubmitted(true)
-    console.log(otp)
-
     emailjs
       .sendForm(
         "service_01fiesq",
@@ -55,7 +52,6 @@ const VolVerify = () => {
   }
   const submit = () => {
     if (otp == verifyOtp) {
-      console.log('Your Otp Is Currect')
       setSuccessAlert(true)
       setTimeout(() => {
         setSuccessAlert(false)
@@ -108,7 +104,7 @@ const VolVerify = () => {
                 name="email"
                 className="h-[35px] rounded-3 border border-secondary text-xl px-3"
               />
-              <button type="submit" className="verifybtn mt-2">Next</button>
+              <button type="submit" className="verifybtn mt-2" style={{backgroundColor:'#26ABB4'}}>Next</button>
             </form>
           </>
         }
