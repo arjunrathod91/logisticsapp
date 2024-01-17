@@ -83,7 +83,7 @@ Youtube Video : https://www.youtube.com/watch?v=xG1vNeCn06o
 
 *Verify Otp*
 
-![Page 16 - OTP Verification ](https://github.com/arjunrathod91/logisticsapp/assets/138087179/dd4bdc03-b674-438b-8107-8aab58edb7ea)
+![Page 15 - Verify Vol](https://github.com/arjunrathod91/logisticsapp/assets/138087179/6a3e6c71-398a-4e8b-87d6-6c89041d40dc)
 
 *User Page*
 
