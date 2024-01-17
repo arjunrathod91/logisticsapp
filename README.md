@@ -60,13 +60,18 @@ Youtube Video : https://www.youtube.com/watch?v=xG1vNeCn06o
 Screenshots :
 **Hero Page**
 ![Page 1](https://github.com/arjunrathod91/logisticsapp/assets/138087179/b70028f8-cb5d-4a74-8ddf-c70faffb2181)
+
 *Choose Auth*
 ![Page 2](https://github.com/arjunrathod91/logisticsapp/assets/138087179/7814daaa-c83b-451e-baed-c9c5019eb8f1)
+
 **User** 
+
 *Log In*
 ![Page 3 - LogIn User](https://github.com/arjunrathod91/logisticsapp/assets/138087179/56f5b7ba-ed65-4372-9bd0-8003f464c7be)
+
 *User Sign In*
 ![Page 11 - SignUp Vol](https://github.com/arjunrathod91/logisticsapp/assets/138087179/710c388a-1e15-444d-aeb7-508ca6528f69)
+
 *Verify Email*
 ![Uploading Page 4 - Verify.jpg…]()
 *Verify Otp*
