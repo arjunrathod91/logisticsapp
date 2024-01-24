@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { Nav, NavItem } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import logo from '../assets/logo.png'
+// import logo from '../assets/logo.png'
 import {
   faBell,
   faXmark,
@@ -16,7 +16,7 @@ const VolHeader = (props) => {
   return (
     <div className="pt-3">
       <div className="d-flex justify-content-around">
-        <img src={logo} alt="" className='circle' style={{ width: "50px", height: "50px" }}/>
+        <img src="" alt="" className='circle' style={{ width: "50px", height: "50px" }}/>
         <div>
           <h4 className='fw-bold'>HelpYours!</h4>
         </div>
