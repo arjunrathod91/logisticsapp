@@ -7,11 +7,13 @@ const Request = require('./Models/Request')
 const http = require('http');
 const dotenv = require('dotenv').config();
 const app = express()
+const bodyParser = require('body-parser');
+
 const mongoURI = "mongodb+srv://arjunrathod91:arjunrathod91@helpyourswebsite.a13bvd6.mongodb.net/?retryWrites=true&w=majority"
 const port = process.env.PORT || 3002
 app.use(express.json())
 app.use(cors())
-
+app.use(bodyParser.urlencoded({ extended: true }));
 mongoose.connect(mongoURI)
 
 app.post('/newUser',(req,res)=>{
@@ -118,7 +120,6 @@ app.get('/newRequest',(req,res)=>{
 })
 
 app.get('/nearbyVol',(req,res)=>{
-  // const help = req.query.
     Volunteer.find()
      .then(newVol => res.json(newVol))
      .catch(err => res.json(err))
